@@ -1,0 +1,27 @@
+'TextField': {
+	height: Ti.UI.SIZE,
+	borderColor: "black",
+	color: "black",
+	font: {
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"Label": {
+	color: "black",
+	font: {
+		color: "black",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"Button": {
+	color: "black",
+	font: {
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"Switch": {
+	color: "black",
+	font: {
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}

@@ -1,0 +1,24 @@
+<Alloy>
+	<Window id="community" backgroundColor="#E9EAEA" title="Axway B2Bi">
+		<Menu id="menu" platform="android">
+			<MenuItem id="mtmLogout" title="Logout" onClick="mnuLogoutClicked" />
+		</Menu>
+		<Label id="lblHeader" />
+		<Label id="lblBanner">Communities</Label>
+		<ListView id="lvwCommunities" onItemclick="openCommunityDetail" canScroll="true" showVerticalScrollIndicator="true" >
+            <Templates>
+                <ItemTemplate id="communityDetailTemplate" height="80" name="communityDetailTemplate" >
+                	<ImageView bindId="leftimage" id="label_leftimage"/>
+                    <Label bindId="communityName" id="label_communityName" />
+                    <Label bindId="primaryContact" id="label_primaryContact" />
+                    <Label bindId="communityId" visible="false" id="label_primaryContactEmail" />
+                    <ImageView bindId="notificationSentYesNo" id="label_notificationSentYesNo" />
+                </ItemTemplate>
+            </Templates>
+            <ListSection id="communityListSection" >
+            	<ListItem id="communityListItem" />
+            </ListSection>
+        </ListView>
+        <ActivityIndicator id="activityIndicator" />
+	</Window>
+</Alloy>

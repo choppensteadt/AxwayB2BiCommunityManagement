@@ -1,0 +1,123 @@
+<Alloy>
+	<Window id="communityDetail" class="container" layout="vertical" backgroundColor="#E9EAEA" title="Axway B2Bi" >
+		<Menu id="menu" platform="android">
+			<MenuItem id="mtmLogout" title="Logout" onClick="mnuLogoutClicked" />
+		</Menu>
+		<ScrollView id="svScrollView" scrollType="vertical" scrollingEnabled="true">
+			<Menu id="menu" platform="android">
+				<MenuItem id="mtmLogout" title="Logout" onClick="mnuLogoutClicked">Sign out</MenuItem>
+			</Menu>
+			<Label id="lblAppDescription" />
+			<Label id="lblCommunityInformation" />
+			<ImageView id="ivGetCommunityContacts" image="/images/navContact.gif" onClick="getCommunityContacts" />
+			<ImageView id="ivGetCommunityCertificates" image="/images/navCertificates.gif" onClick="getCommunityCertificates" />
+			<ImageView id="ivGetCommunityRoutingIds" image="/images/navRoutingIds.gif" onClick="getCommunityRoutingIds" />
+			<ImageView id="ivGetApplicationDeliveries" image="/images/navApplicationDelivery.gif" onClick="getApplicationDeliveries" />
+			<ImageView id="ivGetApplicationPickups" image="/images/navApplicationPickup.gif" onClick="getApplicationPickups" />
+			<ImageView id="ivGetCommunityTradingPickups" image="/images/navTradingPickup.gif" onClick="getCommunityTradingPickups" />
+			<ImageView id="ivArrowRight" image="/images/navArrowGrayRight.gif" />
+			<ImageView id="ivCloud" image="/images/navInternet.gif" />
+			<ImageView id="ivGetCommunityTradingPartners" image="/images/navTradingPartners.gif" onClick="getCommunityTradingPartners" />
+			<Label id="lblNumberOfTradingPartners" />
+			<Label id="lblTabTitle" />
+			<ListView id="lvwCertificates" canScroll="true" showVerticalScrollIndicator="true" >
+	            <Templates>
+	                <ItemTemplate id="certDetailTemplate" height="80" name="certDetailTemplate" >
+	                	<ImageView bindId="leftimage" id="label_leftimage"/>
+	                    <Label bindId="certName" id="label_certName" />
+	                    <Label bindId="certState" id="label_certState" />
+	                    <Label bindId="certUsage" id="label_certUsage" />
+                	    <Label bindId="certExpirationDate" id="label_certExpirationDate" />
+	                </ItemTemplate>
+	            </Templates>
+	            <ListSection id="certListSection" >
+	            	<ListItem id="certListItem" />
+	            </ListSection>
+	        </ListView>
+	        <ListView id="lvwContacts" canScroll="true" showVerticalScrollIndicator="true" >
+	            <Templates>
+	                <ItemTemplate id="contactDetailTemplate" height="80" name="contactDetailTemplate" >
+	                	<ImageView bindId="leftimage" id="label_leftimage"/>
+	                    <Label bindId="contactName" id="label_contactName" />
+	                    <Label bindId="contactEmail" id="label_contactEmail" />
+	                    <Label bindId="contactPhone" id="label_contactPhone" />
+	                </ItemTemplate>
+	            </Templates>
+	            <ListSection id="contactListSection" >
+	            	<ListItem id="contactListItem" />
+	            </ListSection>
+	        </ListView>
+	   		<ListView id="lvwRoutingIds" canScroll="true" showVerticalScrollIndicator="true" >
+	            <Templates>
+	                <ItemTemplate id="RoutingIdDetailTemplate" height="80" name="routingIdDetailTemplate" >
+	                	<ImageView bindId="leftimage" id="label_leftimage"/>
+	                    <Label bindId="routingId" id="label_routingId" />
+	                </ItemTemplate>
+	            </Templates>
+	            <ListSection id="routingIdListSection" >
+	            	<ListItem id="routingIdListItem" />
+	            </ListSection>
+	        </ListView>
+	      	<ListView id="lvwAppDeliveries" canScroll="true" showVerticalScrollIndicator="true" >
+	            <Templates>
+	                <ItemTemplate id="appDeliveryTemplate" height="80" name="appDeliveryTemplate" >
+	                	<ImageView bindId="leftimage" id="label_leftimage"/>
+	                    <Label bindId="appDeliveryId" id="label_appDeliveryId" visible="false" />
+	                    <Label bindId="appDeliveryName" id="label_appDeliveryName" />
+						<Label bindId="appDeliveryProtocol" id="label_appDeliveryProtocol" />
+						<Label bindId="appDeliveryTransport" id="label_appDeliveryTransport" />
+						<Label bindId="appDeliveryUrl" id="label_appDeliveryUrl" visible="false" />
+					</ItemTemplate>
+	            </Templates>
+	            <ListSection id="appDeliveryListSection" >
+	            	<ListItem id="appDeliveryListItem" />
+	            </ListSection>
+	        </ListView>
+	       	<ListView id="lvwAppPickups" canScroll="true" showVerticalScrollIndicator="true" >
+	            <Templates>
+	                <ItemTemplate id="appPickupTemplate" height="80" name="appPickupTemplate" >
+	                    <ImageView bindId="leftimage" id="label_leftimage"/>
+	                    <Label bindId="appPickupId" id="label_appPickupId" visible="false" />
+	                    <Label bindId="appPickupName" id="label_appPickupName" />
+						<Label bindId="appPickupProtocol" id="label_appPickupProtocol" visible="false" />
+						<Label bindId="appPickupTransport" id="label_appPickupTransport" />
+						<Label bindId="appPickupUrl" id="label_appPickupUrl" visible="false" />
+	                </ItemTemplate>
+	            </Templates>
+	            <ListSection id="appPickupListSection" >
+	            	<ListItem id="appPickupListItem" />
+	            </ListSection>
+	        </ListView>
+	        <ListView id="lvwTradingPickups" canScroll="true" showVerticalScrollIndicator="true" >
+	            <Templates>
+	                <ItemTemplate id="tradingPickupTemplate" height="80" name="tradingPickupTemplate" >
+	                	<ImageView bindId="leftimage" id="label_leftimage"/>
+	                    <Label bindId="tradingPickupId" id="label_tradingPickupId" visible="false" />
+	                    <Label bindId="tradingPickupName" id="label_tradingPickupName" />
+						<Label bindId="tradingPickupProtocol" id="label_tradingPickupProtocol" />
+						<Label bindId="tradingPickupUrl" id="label_tradingPickupUrl" />
+	                </ItemTemplate>
+	            </Templates>
+	            <ListSection id="tradingPickupListSection" >
+	            	<ListItem id="tradingPickupListItem" />
+	            </ListSection>
+	        </ListView>
+	        <ListView id="lvwTradingPartners" canScroll="true" showVerticalScrollIndicator="true" >
+	            <Templates>
+	                <ItemTemplate id="tradingPartnerDetailTemplate" height="80" name="tradingPartnerDetailTemplate" >
+	                	<ImageView bindId="leftimage" id="label_leftimage"/>
+	                	<Label bindId="tradingPartnerId" id="label_tradingPartnerId" visible="false" />
+	                    <Label bindId="tradingPartnerName" id="label_tradingPartnerName" />
+						<Label bindId="tradingPartnerPrimaryContactName" id="label_tradingPartnerPrimaryContactName" />
+						<Label bindId="tradingPartnerPrimaryContactEmail" id="label_tradingPartnerPrimaryContactEmail" />
+						<Label bindId="tradingPartnerDefaultRoutingId" id="label_tradingPartnerDefaultRoutingId" />
+	                </ItemTemplate>
+	            </Templates>
+	            <ListSection id="tradingPartnerListSection" >
+	            	<ListItem id="tradingPartnerListItem" />
+	            </ListSection>
+	        </ListView>
+			<ActivityIndicator id="activityIndicator" />
+		</ScrollView>
+	</Window>
+</Alloy>

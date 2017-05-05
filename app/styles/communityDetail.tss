@@ -1,0 +1,415 @@
+".container" : {
+	backgoundColor: '#E9EAEA',
+}
+"#svScrollView": {
+	top: 0,
+	width: "100%",
+	height: "100%",
+	backgroundColor: "#E9EAEA",
+	opacity: ".93",
+}
+"#lblAppDescription[formFactor=tablet]": {
+	top: 10,
+	left: 10,
+	font: {
+        fontSize: 28,
+    },
+}
+"#lblCommunityInformation[formFactor=tablet]": {
+	top: 50,
+	left: 10,
+	font: {
+        fontSize: 18,
+    },
+}
+"#ivGetCommunityContacts[formFactor=tablet]": {
+	top: 100,
+	left: 15,
+	height: Ti.UI.SIZE,
+	width: 125,
+	borderRadius: "10",
+}
+"#ivGetCommunityCertificates[formFactor=tablet]": {
+	top: 152,
+	left: 15,
+	height: Ti.UI.SIZE,
+	width: 125,
+	borderRadius: "10",
+}
+"#ivGetCommunityRoutingIds[formFactor=tablet]": {
+	top: 204,
+	left: 15,
+	height: Ti.UI.SIZE,
+	width: 125,
+	borderRadius: "10",
+}
+"#ivGetApplicationDeliveries[formFactor=tablet]": {
+	top: 100,
+	left: 165,
+	height: 70,
+	width: Ti.UI.SIZE,
+	borderRadius: "10",
+}
+"#ivGetApplicationPickups[formFactor=tablet]": {
+	top: 175,
+	left: 165,
+	height: 70,
+	width: Ti.UI.SIZE,
+	borderRadius: "10",
+}
+"#ivGetCommunityTradingPickups[formFactor=tablet]": {
+	top: 100,
+	left: 242,
+	height: 70,
+	width: Ti.UI.SIZE,
+	borderRadius: "10",
+}
+"#ivArrowRight[formFactor=tablet]": {
+	top: 200,
+	left: 250,
+	height: 25,
+	width: Ti.UI.SIZE,
+	borderRadius: "10",
+}
+"#ivCloud[formFactor=tablet]": {
+	top: 100,
+	left: 319,
+	height: 145,
+	width: Ti.UI.SIZE,
+	borderRadius: "10",
+}
+"#ivGetCommunityTradingPartners[formFactor=tablet]": {
+	top: 130,
+	left: 377,
+	height: 70,
+	width: Ti.UI.SIZE,
+	borderRadius: "10",
+}
+"#lblNumberOfTradingPartners[formFactor=tablet]": {
+	top: 205,
+	left: 422,
+	font: {
+        fontSize: 18,
+    },
+}
+"#lblTabTitle[formFactor=tablet]": {
+	top: 270,
+	left: 10,
+	font: {
+        fontSize: 28,
+    },
+}
+"#lvwCertificates[formFactor=tablet]":{
+	top: 320,
+}
+"#label_leftimage[formFactor=tablet]": {
+	left: 10,
+	width: 40,
+	height: 40
+}
+"#label_certName[formFactor=tablet]": {
+	top: 10,
+	left: 60,
+	font: {
+		fontSize: 20,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#label_certState[formFactor=tablet]": {
+	top: 40,
+	left: 60,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_certUsage[formFactor=tablet]": {
+	top: 40,
+	left: 210,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_certExpirationDate[formFactor=tablet]": {
+	top: 40,
+	left: 310,
+	font: {
+        fontSize: 18,
+        fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#lvwContacts[formFactor=tablet]":{
+	top: 320,
+}
+"#label_leftimage[formFactor=tablet]": {
+	left: 10,
+	width: 40,
+	height: 40
+}
+"#label_contactName[formFactor=tablet]": {
+	top: 10,
+	left: 60,
+	font: {
+		fontSize: 20,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#label_contactEmail[formFactor=tablet]": {
+	top: 40,
+	left: 60,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_contactPhone[formFactor=tablet]": {
+	top: 40,
+	left: 310,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#lvwRoutingIds[formFactor=tablet]":{
+	top: 320,
+}
+"#label_leftimage[formFactor=tablet]": {
+	left: 10,
+	width: 40,
+	height: 40
+}
+"#label_routingId[formFactor=tablet]": {
+	top: 25,
+	left: 60,
+	font: {
+		color: "#407CA0",
+		fontSize: 20,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#lvwAppDeliveries[formFactor=tablet]":{
+	top: 320,
+}
+"#label_leftimage[formFactor=tablet]": {
+	left: 10,
+	width: 40,
+	height: 40
+}
+"#label_appDeliveryName[formFactor=tablet]": {
+	top: 10,
+	left: 60,
+	font: {
+		fontSize: 20,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#label_appDeliveryProtocol[formFactor=tablet]": {
+	top: 40,
+	left: 60,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_appDeliveryTransport[formFactor=tablet]": {
+	top: 40,
+	left: 150,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_appDeliveryUrl[formFactor=tablet]": {
+	top: 40,
+	left: 310,
+	font: {
+        fontSize: 18,
+        fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#lvwAppPickups[formFactor=tablet]":{
+	top: 320,
+}
+"#label_leftimage[formFactor=tablet]": {
+	left: 10,
+	width: 40,
+	height: 40
+}
+"#label_appPickupName[formFactor=tablet]": {
+	top: 10,
+	left: 60,
+	font: {
+		fontSize: 20,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#label_appPickupProtocol[formFactor=tablet]": {
+	top: 40,
+	left: 60,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_appPickupTransport[formFactor=tablet]": {
+	top: 40,
+	left: 60,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_appPickupUrl[formFactor=tablet]": {
+	top: 40,
+	left: 310,
+	font: {
+        fontSize: 18,
+        fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#lvwProcessing[formFactor=tablet]":{
+	top: 320,
+}
+"#label_leftimage[formFactor=tablet]": {
+	left: 10,
+	width: 40,
+	height: 40
+}
+"#label_processingName[formFactor=tablet]": {
+	top: 10,
+	left: 60,
+	font: {
+		fontSize: 20,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#label_processingTwo[formFactor=tablet]": {
+	top: 40,
+	left: 60,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_processingThree[formFactor=tablet]": {
+	top: 40,
+	left: 210,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_processingFour[formFactor=tablet]": {
+	top: 40,
+	left: 310,
+	font: {
+        fontSize: 18,
+        fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#lvwTradingPickups[formFactor=tablet]":{
+	top: 320,
+}
+"#label_leftimage[formFactor=tablet]": {
+	left: 10,
+	width: 40,
+	height: 40
+}
+"#label_tradingPickupName[formFactor=tablet]": {
+	top: 10,
+	left: 60,
+	font: {
+		fontSize: 20,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#label_tradingPickupProtocol[formFactor=tablet]": {
+	top: 40,
+	left: 60,
+	font: {
+        fontSize: 16,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_tradingPickupUrl[formFactor=tablet]": {
+	top: 40,
+	left: 150,
+	font: {
+        fontSize: 16,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#lvwTradingPartners[formFactor=tablet]":{
+	top: 320,
+}
+"#label_leftimage[formFactor=tablet]": {
+	left: 10,
+	width: 40,
+	height: 40
+}
+"#label_tradingPartnerName[formFactor=tablet]": {
+	top: 10,
+	left: 60,
+	font: {
+		fontSize: 20,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#label_tradingPartnerPrimaryContactName[formFactor=tablet]": {
+	top: 40,
+	left: 60,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_tradingPartnerPrimaryContactEmail[formFactor=tablet]": {
+	top: 40,
+	left: 210,
+	font: {
+        fontSize: 18,
+		fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#label_tradingPartnerDefaultRoutingId[formFactor=tablet]": {
+	top: 40,
+	left: 400,
+	font: {
+        fontSize: 18,
+        fontColor: "#407CA0",
+  		fontFamily: 'OpenSans-Regular',
+  	},
+}
+"#activityIndicator": {
+	top: '50%',
+	left: '50%',
+	style: Ti.UI.ActivityIndicatorStyle.BIG_DARK,
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+}

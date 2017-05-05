@@ -1,0 +1,165 @@
+".container": {
+	backgroundImage: "/images/login_background.png",
+}
+"#svScrollView[formFactor=tablet]": {
+	top: 50,
+	width: "80%",
+	height: 480,
+	backgroundColor: "white",
+	opacity: ".93",
+	borderRadius: "10",
+}
+"#svScrollView[formFactor=handheld]": {
+	top: 20,
+	width: "80%",
+	height: "90%",
+	backgroundColor: "white",
+	opacity: ".93",
+	borderRadius: "10",
+}
+"#vwLoginView": {
+	width: Ti.UI.SIZE,
+}
+"#lblProductName[formFactor=tablet]": {
+	height: 90,
+	width: "100%",
+	top: 0,
+	color: "white",
+	backgroundColor: "#3d4051",
+	textAlign: "center",
+	font: {
+        fontSize: '28',
+    },
+}
+"#lblProductName[formFactor=handheld]": {
+	height: 50,
+	width: "100%",
+	top: 0,
+	color: "white",
+	backgroundColor: "#3d4051",
+	textAlign: "center",
+	font: {
+        fontSize: '22',
+    },
+}
+"#imgAxwayLogo[formFactor=tablet]": {
+	height: 70,
+	left: 10,
+	top: 10,
+	image: "/images/Axway_logo_tag_vert_rev_rgb.png",
+}
+"#lblWelcome[formFactor=tablet]": {
+	left: 0,
+	top: 110,
+	width: 200,
+	color: "black",
+	font: {
+        fontSize: '28',
+    },
+}
+"#lblWelcome[formFactor=handheld]": {
+	left: 0,
+	top: 60,
+	width: 200,
+	color: "black",
+	font: {
+        fontSize: '22',
+    },
+}
+"#txtHostIP[formFactor=tablet]": {
+	top: 165,
+	width: 200,
+	borderColor: "black",
+	hintText: "URL",
+	hintTextColor: "gray",
+	autocorrect: false,
+	autocapitalization: false,
+	borderRadius: "5",
+}
+"#txtHostIP[formFactor=handheld]": {
+	top: 105,
+	width: 200,
+	borderColor: "black",
+	hintText: "URL",
+	hintTextColor: "gray",
+	autocorrect: false,
+	autocapitalization: false,
+	borderRadius: "5",
+}
+"#txtUserName[formFactor=tablet]": {
+	top: 230,
+	width: 200,
+	borderColor: "black",
+	hintText: "Username",
+	hintTextColor: "gray",
+	autocorrect: false,
+	autocapitalization: false,
+	borderRadius: "5",
+}
+"#txtUserName[formFactor=handheld]": {
+	top: 170,
+	width: 200,
+	borderColor: "black",
+	hintText: "Username",
+	hintTextColor: "gray",
+	autocorrect: false,
+	autocapitalization: false,
+	borderRadius: "5",
+}
+"#txtPassword[formFactor=tablet]": {
+	top: 295,
+	width: 200,
+	hintText: "Password",
+	hintTextColor: "gray",
+	passwordMask: true,
+	autocorrect: false,
+	autocapitalization: false,
+	borderRadius: "5",
+}
+"#txtPassword[formFactor=handheld]": {
+	top: 235,
+	width: 200,
+	hintText: "Password",
+	hintTextColor: "gray",
+	passwordMask: true,
+	autocorrect: false,
+	autocapitalization: false,
+	borderRadius: "5",
+}
+"#swcKeepMeSignedIn[formFactor=tablet]": {
+	top: 355,	
+	style:Ti.UI.Android.SWITCH_STYLE_CHECKBOX,
+	title: "Remember me",
+	color: "black",
+	font: {
+        fontSize: '18',
+    },
+}
+"#swcKeepMeSignedIn[formFactor=handheld]": {
+	top: 295,	
+	style:Ti.UI.Android.SWITCH_STYLE_CHECKBOX,
+	title: "Remember me",
+	color: "black",
+	font: {
+        fontSize: '18',
+    },
+}
+"#btnLogin[formFactor=tablet]": {
+	top: 405,
+	width: 150,
+	backgroundColor: "#407CA0",
+	borderRadius: "20",
+}
+"#btnLogin[formFactor=handheld]": {
+	top: 345,
+	width: 150,
+	backgroundColor: "#407CA0",
+	borderRadius: "20",
+}
+"#activityIndicator": {
+	top: '50%',
+	left: '50%',
+	style: Ti.UI.ActivityIndicatorStyle.BIG_DARK,
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+}

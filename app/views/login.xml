@@ -1,0 +1,17 @@
+<Alloy>
+    <Window class="container" id="login" onAndroidback="loginBackButtonPressed" navBarHidden="true" fullscreen="true" title="" >
+        <ScrollView id="svScrollView" scrollType="vertical" scrollingEnabled="true">
+            <Label id="lblProductName">Axway B2Bi</Label>
+            <ImageView id="imgAxwayLogo"></ImageView>
+            <View id="vwLoginView">
+                <Label id="lblWelcome">Welcome.</Label>
+                <TextField id="txtHostIP"/>
+                <TextField id="txtUserName"/>
+                <TextField id="txtPassword"/>
+                <Switch id="swcKeepMeSignedIn" onChange="swcKeepMeSignedInChecked"/>
+                <Button id="btnLogin" onClick="btnLoginClicked">Sign in</Button>
+				<ActivityIndicator id="activityIndicator" />
+            </View>
+        </ScrollView>
+	</Window>
+</Alloy>
