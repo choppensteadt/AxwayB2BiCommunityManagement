@@ -1,5 +1,13 @@
 var args = $.args;
 
+// Strings for localization
+$.lblProductName.text = L('product_name');
+$.lblWelcome.text = L('welcome_message');
+$.btnLogin.title = L('login');
+$.txtUserName.hintText = L('username');
+$.txtPassword.hintText = L('password');
+$.swcKeepMeSignedIn.title = L('remember');
+
 // Determine whether to remember host IP and username  
 var rememberMeFromProperties = Ti.App.Properties.getBool('remember', false);
 

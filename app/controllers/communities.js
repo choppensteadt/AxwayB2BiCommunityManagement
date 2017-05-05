@@ -1,6 +1,6 @@
-//var args = $.args;
-
-$.lblHeader.text = "Community Management";
+// Strings for localization
+$.lblHeader.text = L('communities_title');
+$.lblBanner.text = L('communities_banner');
 
 var communities = [];
 

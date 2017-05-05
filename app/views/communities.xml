@@ -1,10 +1,10 @@
 <Alloy>
 	<Window id="community" backgroundColor="#E9EAEA" title="Axway B2Bi">
 		<Menu id="menu" platform="android">
-			<MenuItem id="mtmLogout" title="Logout" onClick="mnuLogoutClicked" />
+			<MenuItem id="mtmLogout" title="L('mainmenu_logout')" onClick="mnuLogoutClicked" />
 		</Menu>
 		<Label id="lblHeader" />
-		<Label id="lblBanner">Communities</Label>
+		<Label id="lblBanner"></Label>
 		<ListView id="lvwCommunities" onItemclick="openCommunityDetail" canScroll="true" showVerticalScrollIndicator="true" >
             <Templates>
                 <ItemTemplate id="communityDetailTemplate" height="80" name="communityDetailTemplate" >

@@ -1,7 +1,7 @@
 <Alloy>
 	<Window id="communityDetail" class="container" layout="vertical" backgroundColor="#E9EAEA" title="Axway B2Bi" >
 		<Menu id="menu" platform="android">
-			<MenuItem id="mtmLogout" title="Logout" onClick="mnuLogoutClicked" />
+			<MenuItem id="mtmLogout" title="L('mainmenu_logout')" onClick="mnuLogoutClicked" />
 		</Menu>
 		<ScrollView id="svScrollView" scrollType="vertical" scrollingEnabled="true">
 			<Menu id="menu" platform="android">

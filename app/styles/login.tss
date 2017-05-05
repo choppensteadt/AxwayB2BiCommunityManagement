@@ -90,7 +90,6 @@
 	top: 230,
 	width: 200,
 	borderColor: "black",
-	hintText: "Username",
 	hintTextColor: "gray",
 	autocorrect: false,
 	autocapitalization: false,
@@ -109,7 +108,6 @@
 "#txtPassword[formFactor=tablet]": {
 	top: 295,
 	width: 200,
-	hintText: "Password",
 	hintTextColor: "gray",
 	passwordMask: true,
 	autocorrect: false,
@@ -129,7 +127,6 @@
 "#swcKeepMeSignedIn[formFactor=tablet]": {
 	top: 355,	
 	style:Ti.UI.Android.SWITCH_STYLE_CHECKBOX,
-	title: "Remember me",
 	color: "black",
 	font: {
         fontSize: '18',

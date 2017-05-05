@@ -39,12 +39,57 @@ function getCommunityPartners(){
 	xhr.open("GET", url);
 	xhr.send();	
 }
+function getCommunityContacts(){
+
+	hideAllTabs();
+
+	$.lvwContacts.show();
+	$.lblTabTitle.text = L("community_detail_contacts_tab_label");
+	
+	$.activityIndicator.show();	
+	
+	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityID+"/contacts";
+	var xhr = Ti.Network.createHTTPClient({
+	    
+	    onload: function(e) {
+	    	
+			var response = JSON.parse(this.responseText);
+			var table = [];
+						
+			for(var i in response.results){
+				
+				var name = response.results[i].name;
+				var phone = response.results[i].phone;
+				var email = response.results[i].email;
+
+				table.push({
+					leftimage:{image:"/images/contact.png"},
+					contactName:{text:name},
+					contactPhone:{text:phone},
+					contactEmail:{text:email},
+					template:'contactDetailTemplate'}
+				);
+			}
+			$.contactListSection.setItems(table);
+			$.activityIndicator.hide();
+			return true;
+		},
+	    onerror: function(e) {
+			$.activityIndicator.hide();
+            alert(e.error);
+	        return false;
+	    },
+	    timeout:10000  /* in milliseconds */
+	});
+	xhr.open("GET", url);
+	xhr.send();	
+}
 function getCommunityCertificates(){
 
 	hideAllTabs();
 	
 	$.lvwCertificates.show();
-	$.lblTabTitle.text = "Certificates";
+	$.lblTabTitle.text = L("community_detail_cert_tab_label");
 	
 	$.activityIndicator.show();	
 	
@@ -90,7 +135,7 @@ function getCommunityRoutingIds(){
 	hideAllTabs();
 	
 	$.lvwRoutingIds.show();
-	$.lblTabTitle.text = "Routing IDs";
+	$.lblTabTitle.text = L("community_detail_routingIds_tab_label");
 	
 	$.activityIndicator.show();	
 	
@@ -126,57 +171,12 @@ function getCommunityRoutingIds(){
 	xhr.open("GET", url);
 	xhr.send();
 }
-function getCommunityContacts(){
-
-	hideAllTabs();
-
-	$.lvwContacts.show();
-	$.lblTabTitle.text = "Contacts";
-	
-	$.activityIndicator.show();	
-	
-	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityID+"/contacts";
-	var xhr = Ti.Network.createHTTPClient({
-	    
-	    onload: function(e) {
-	    	
-			var response = JSON.parse(this.responseText);
-			var table = [];
-						
-			for(var i in response.results){
-				
-				var name = response.results[i].name;
-				var phone = response.results[i].phone;
-				var email = response.results[i].email;
-
-				table.push({
-					leftimage:{image:"/images/contact.png"},
-					contactName:{text:name},
-					contactPhone:{text:phone},
-					contactEmail:{text:email},
-					template:'contactDetailTemplate'}
-				);
-			}
-			$.contactListSection.setItems(table);
-			$.activityIndicator.hide();
-			return true;
-		},
-	    onerror: function(e) {
-			$.activityIndicator.hide();
-            alert(e.error);
-	        return false;
-	    },
-	    timeout:10000  /* in milliseconds */
-	});
-	xhr.open("GET", url);
-	xhr.send();	
-}
 function getApplicationDeliveries(){
 
 	hideAllTabs();
 
 	$.lvwAppDeliveries.show();
-	$.lblTabTitle.text = "Application Deliveries";
+	$.lblTabTitle.text = L("community_detail_app_deliveries_tab_label");
 
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/application/exchange/delivery?limit=100&offset=0&orderBy=name";
 	var xhr = Ti.Network.createHTTPClient({
@@ -230,7 +230,7 @@ function getApplicationPickups(){
 	hideAllTabs();
 
 	$.lvwAppPickups.show();
-	$.lblTabTitle.text = "Application Pickups";
+	$.lblTabTitle.text = L("community_detail_app_pickups_tab_label");
 	
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/application/exchange/pickup?limit=100&offset=0&orderBy=name";
 	var xhr = Ti.Network.createHTTPClient({
@@ -284,7 +284,7 @@ function getCommunityTradingPickups(){
 	hideAllTabs();
 	
 	$.lvwTradingPickups.show();
-	$.lblTabTitle.text = "Trading Pickups";
+	$.lblTabTitle.text = L("community_detail_trading_pickups_tab_label");
 	
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/exchange/"+Alloy.Globals.communityID+"/trading/pickup";
 	var xhr = Ti.Network.createHTTPClient({
@@ -328,7 +328,7 @@ function getCommunityTradingPartners(){
 	hideAllTabs();
 	
 	$.lvwTradingPartners.show();
-	$.lblTabTitle.text = "Trading Partners";
+	$.lblTabTitle.text = L("community_detail_trading_partners_tab_label");
 	
 	$.activityIndicator.show();	
 	
