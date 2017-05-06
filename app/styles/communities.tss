@@ -1,7 +1,7 @@
-"Window": {
+"Window[platform=android]": {
 	backgroundColor: '#E9EAEA'
 }
-"#lblHeader[formFactor=tablet]": {
+"#lblHeader[platform=android formFactor=tablet]": {
 	top: 10,
 	left: 10,
 	color: 'black',
@@ -11,7 +11,7 @@
   		fontFamily: 'OpenSans-Regular',
   	},
 }
-"#lblHeader[formFactor=handheld]": {
+"#lblHeader[platform=android formFactor=handheld]": {
 	top: 10,
 	left: 10,
 	color: 'black',
@@ -21,7 +21,7 @@
   		fontFamily: 'OpenSans-Regular',
   	},
 }
-"#lblBanner[formFactor=tablet]": {
+"#lblBanner[platform=android formFactor=tablet]": {
     top: 70,
     height: Ti.UI.SIZE,
     width: '100%',
@@ -34,7 +34,7 @@
     	fontFamily: 'OpenSans-Regular',
     }
 }
-"#lblBanner[formFactor=handheld]": {
+"#lblBanner[platform=android formFactor=handheld]": {
     top: 70,
     height: Ti.UI.SIZE,
     width: '100%',
@@ -47,23 +47,23 @@
     	fontFamily: 'OpenSans-Regular',
     }
 }
-"#lvwCommunities[formFactor=tablet]":{
+"#lvwCommunities[platform=android formFactor=tablet]":{
 	top: 100,
 }
-"#lvwCommunities[formFactor=handheld]":{
+"#lvwCommunities[platform=android formFactor=handheld]":{
 	top: 100,
 }
-"#label_leftimage[formFactor=tablet]": {
+"#label_leftimage[platform=android formFactor=tablet]": {
 	left: 6,
 	width: 48,
 	height: 48
 }
-"#label_leftimage[formFactor=handheld]": {
+"#label_leftimage[platform=android formFactor=handheld]": {
 	left: 6,
 	width: 48,
 	height: 48
 }
-"#label_communityName[formFactor=tablet]": {
+"#label_communityName[platform=android formFactor=tablet]": {
 	top: 10,
 	left: 60,
 	font: {
@@ -72,7 +72,7 @@
   		fontFamily: 'OpenSans-Regular',
 	}
 }
-"#label_communityName[formFactor=handheld]": {
+"#label_communityName[platform=android formFactor=handheld]": {
 	top: 10,
 	left: 60,
 	font: {
@@ -81,7 +81,7 @@
   		fontFamily: 'OpenSans-Regular',
 	}
 }
-"#label_primaryContact[formFactor=tablet]": {
+"#label_primaryContact[platform=android formFactor=tablet]": {
 	top: 40,
 	left: 60,
 	font: {
@@ -89,7 +89,7 @@
   		fontFamily: 'OpenSans-Regular',
   	},
 }
-"#label_primaryContact[formFactor=handheld]": {
+"#label_primaryContact[platform=android formFactor=handheld]": {
 	top: 40,
 	left: 60,
 	font: {
@@ -97,7 +97,7 @@
   		fontFamily: 'OpenSans-Regular',
   	},
 }
-"#label_primaryContactEmail[formFactor=tablet]": {
+"#label_primaryContactEmail[platform=android formFactor=tablet]": {
 	top: 40,
 	left: 300,
 	font: {
@@ -105,7 +105,7 @@
   		fontFamily: 'OpenSans-Regular',
   	},
 }
-"#label_primaryContactEmail[formFactor=handheld]": {
+"#label_primaryContactEmail[platform=android formFactor=handheld]": {
 	top: 40,
 	left: 300,
 	font: {
@@ -113,17 +113,17 @@
   		fontFamily: 'OpenSans-Regular',
   	},
 }
-"#label_notificationSentYesNo[formFactor=tablet]": {
+"#label_notificationSentYesNo[platform=android formFactor=tablet]": {
 	right: 6,
 	width: 48,
 	height: 48
 }
-"#label_notificationSentYesNo[formFactor=handheld]": {
+"#label_notificationSentYesNo[platform=android formFactor=handheld]": {
 	right: 6,
 	width: 48,
 	height: 48
 }
-"#activityIndicator": {
+"#activityIndicator[platform=android]": {
 	top: '50%',
 	left: '50%',
 	style: Ti.UI.ActivityIndicatorStyle.BIG_DARK,

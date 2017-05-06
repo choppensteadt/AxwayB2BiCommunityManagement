@@ -1,0 +1,25 @@
+<resources>
+	<!-- Main Menu -->
+	<string name="mainmenu_logout">Connectez - Out</string>
+	
+	<!-- Login Page -->
+	<string name="product_name">Axway B2Bi</string>
+	<string name="welcome_message">Bienvenue.</string>
+	<string name="login">Se connecter</string>
+	<string name="username">Nom d'utilisateur</string>
+	<string name="password">Mot de passe</string>
+	<string name="remember">Souviens-toi de moi</string>
+	
+	<!-- Communities Page -->
+	<string name="communities_title">Gestionnaire de communauté</string>
+	<string name="communities_banner">Communautés</string>
+	
+	<!-- Community Detail Page -->
+	<string name="community_detail_contacts_tab_label">Contacts</string>
+	<string name="community_detail_cert_tab_label">Certificats</string>
+	<string name="community_detail_routingIds_tab_label">Routing IDs</string>
+	<string name="community_detail_app_deliveries_tab_label">Livraisons d'application</string>
+	<string name="community_detail_app_pickups_tab_label">Recettes d'application</string>
+	<string name="community_detail_trading_pickups_tab_label">Recettes de négoce</string>
+	<string name="community_detail_trading_partners_tab_label">Partenaires commerciaux</string>
+</resources>
