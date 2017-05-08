@@ -1,6 +1,6 @@
 <resources>
 	<!-- Main Menu -->
-	<string name="mainmenu_logout">Ausloggen</string>
+	<string name="mainmenu_logout">Abmelden</string>
 	
 	<!-- Login Page -->
 	<string name="product_name">Axway B2Bi</string>

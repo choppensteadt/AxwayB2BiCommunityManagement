@@ -4,7 +4,7 @@
 			<MenuItem id="mtmLogout" title="L('mainmenu_logout')" onClick="mnuLogoutClicked" />
 		</Menu>
 		<Label id="lblHeader" />
-		<Label id="lblBanner"></Label>
+		<Label id="lblBanner" />
 		<ListView id="lvwCommunities" onItemclick="openCommunityDetail" canScroll="true" showVerticalScrollIndicator="true" >
             <Templates>
                 <ItemTemplate id="communityDetailTemplate" height="80" name="communityDetailTemplate" >

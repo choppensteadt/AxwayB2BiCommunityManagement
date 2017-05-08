@@ -92,21 +92,23 @@
         fontSize: 18,
     },
 }
-"#lblTabTitle[platform=android formFactor=tablet]": {
-	top: 270,
-	left: 10,
+"#lvwContacts[platform=android formFactor=tablet]":{
+	top: 280,
 	font: {
-        fontSize: 28,
+        fontSize: 24,
     },
 }
-"#ivHelp[platform=android formFactor=tablet]": {
-	top: 270,
-	right: 10,
-	width: 40,
-	height: 40
-}
-"#lvwContacts[platform=android formFactor=tablet]":{
-	top: 320,
+"#lblContactsHeaderViewLabel[platform=android formFactor=tablet]": {
+	top: 0,
+	left: 10,
+	width: "50%",    
+	height: Ti.UI.SIZE,
+	color: "white",
+	backgroundColor: "#989998",
+	font: {
+		fontSize: 24,
+  		fontFamily: 'OpenSans-Regular',
+	}
 }
 "#label_contactLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
@@ -141,12 +143,24 @@
   	},
 }
 "#lvwCertificates[platform=android formFactor=tablet]":{
-	top: 320,
+	top: 280,
+}
+"#lblCertificatesHeaderViewLabel[platform=android formFactor=tablet]": {
+	top: 0,
+	left: 10,
+	width: "50%",
+    height: Ti.UI.SIZE,
+	color: "white",
+	backgroundColor: "#989998",
+	font: {
+		fontSize: 24,
+  		fontFamily: 'OpenSans-Regular',
+	}
 }
 "#label_certificateLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
 	width: 40,
-	height: 40
+	height: 40,
 }
 "#label_certName[platform=android formFactor=tablet]": {
 	top: 10,
@@ -190,7 +204,19 @@
 	height: 40
 }
 "#lvwRoutingIds[platform=android formFactor=tablet]":{
-	top: 320,
+	top: 280,
+}
+"#lblRoutingIdsHeaderViewLabel[platform=android formFactor=tablet]": {
+	top: 0,
+	left: 10,
+	width: "50%",
+    height: Ti.UI.SIZE,
+	color: "white",
+	backgroundColor: "#989998",
+	font: {
+		fontSize: 24,
+  		fontFamily: 'OpenSans-Regular',
+	}
 }
 "#label_routingIdLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
@@ -207,7 +233,22 @@
 	}
 }
 "#lvwAppDeliveries[platform=android formFactor=tablet]":{
-	top: 320,
+	top: 280,
+	font: {
+        fontSize: 24,
+    },
+}
+"#lblAppDeliveryHeaderViewLabel[platform=android formFactor=tablet]": {
+	top: 0,
+	left: 10,
+	width: "50%",
+    height: Ti.UI.SIZE,
+	color: "white",
+	backgroundColor: "#989998",
+	font: {
+		fontSize: 24,
+  		fontFamily: 'OpenSans-Regular',
+	}
 }
 "#label_appDeliveryLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
@@ -251,7 +292,22 @@
   	},
 }
 "#lvwAppPickups[platform=android formFactor=tablet]":{
-	top: 320,
+	top: 280,
+	font: {
+        fontSize: 24,
+    },
+}
+"#lblAppPickupsHeaderViewLabel[platform=android formFactor=tablet]": {
+	top: 0,
+	left: 10,
+	width: "50%",
+    height: Ti.UI.SIZE,
+	color: "white",
+	backgroundColor: "#989998",
+	font: {
+		fontSize: 24,
+  		fontFamily: 'OpenSans-Regular',
+	}
 }
 "#label_appPickupLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
@@ -295,7 +351,22 @@
   	},
 }
 "#lvwTradingPickups[platform=android formFactor=tablet]":{
-	top: 320,
+	top: 280,
+	font: {
+        fontSize: 24,
+    },
+}
+"#lblTradingPickupsHeaderViewLabel[platform=android formFactor=tablet]": {
+	top: 0,
+	left: 10,
+	width: "50%",
+    height: Ti.UI.SIZE,
+	color: "white",
+	backgroundColor: "#989998",
+	font: {
+		fontSize: 24,
+  		fontFamily: 'OpenSans-Regular',
+	}
 }
 "#label_tradingPickupLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
@@ -330,7 +401,22 @@
   	},
 }
 "#lvwTradingPartners[platform=android formFactor=tablet]":{
-	top: 320,
+	top: 280,
+	font: {
+        fontSize: 24,
+    },
+}
+"#lblTradingPartnersHeaderViewLabel[platform=android formFactor=tablet]": {
+	top: 0,
+	left: 10,
+	width: "50%",
+    height: Ti.UI.SIZE,
+	color: "white",
+	backgroundColor: "#989998",
+	font: {
+		fontSize: 24,
+  		fontFamily: 'OpenSans-Regular',
+	}
 }
 "#label_tradingPartnerLeftImage[platform=android formFactor=tablet]": {
 	left: 10,

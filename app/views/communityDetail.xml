@@ -19,9 +19,10 @@
 			<ImageView id="ivCloud" image="/images/navInternet.gif" />
 			<ImageView id="ivGetCommunityTradingPartners" image="/images/navTradingPartners.gif" onClick="getCommunityTradingPartners" />
 			<Label id="lblNumberOfTradingPartners" />
-			<Label id="lblTabTitle" />
-			<ImageView id = "ivHelp" onClick="showHelp" image="/images/help.png"  />
-	        <ListView id="lvwContacts" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	        <ListView id="lvwContacts" headerView="hvContactsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	            <HeaderView id="hvContactsHeaderView">
+	            	<Label id="lblContactsHeaderViewLabel" />
+            	</HeaderView>
 	            <Templates>
 	                <ItemTemplate id="contactDetailTemplate" height="80" name="contactDetailTemplate" >
 	                	<ImageView bindId="contactLeftImage" id="label_contactLeftImage"/>
@@ -34,7 +35,10 @@
 	            	<ListItem id="contactListItem" />
 	            </ListSection>
 	        </ListView>
-			<ListView id="lvwCertificates" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+			<ListView id="lvwCertificates" headerView="hvCertificatesHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	            <HeaderView id="hvCertificatesHeaderView">
+	            	<Label id="lblCertificatesHeaderViewLabel" />
+            	</HeaderView>
 	            <Templates>
 	                <ItemTemplate id="certDetailTemplate" height="80" name="certDetailTemplate" >
 	                	<ImageView bindId="certificateLeftImage" id="label_certificateLeftImage"/>
@@ -49,7 +53,10 @@
 	            	<ListItem id="certListItem" />
 	            </ListSection>
 	        </ListView>
-	   		<ListView id="lvwRoutingIds" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	   		<ListView id="lvwRoutingIds" headerView="hvRoutingIdsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	            <HeaderView id="hvRoutingIdsHeaderView">
+	            	<Label id="lblRoutingIdsHeaderViewLabel" />
+            	</HeaderView>
 	            <Templates>
 	                <ItemTemplate id="RoutingIdDetailTemplate" height="80" name="routingIdDetailTemplate" >
 	                	<ImageView bindId="routingIdLeftImage" id="label_routingIdLeftImage"/>
@@ -60,7 +67,10 @@
 	            	<ListItem id="routingIdListItem" />
 	            </ListSection>
 	        </ListView>
-	      	<ListView id="lvwAppDeliveries" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	      	<ListView id="lvwAppDeliveries" headerView="hvAppDeliveryHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	            <HeaderView id="hvAppDeliveryHeaderView">
+	            	<Label id="lblAppDeliveryHeaderViewLabel" />
+            	</HeaderView>
 	            <Templates>
 	                <ItemTemplate id="appDeliveryTemplate" height="80" name="appDeliveryTemplate" >
 	                	<ImageView bindId="appDeliveryLeftImage" id="label_appDeliveryLeftImage"/>
@@ -75,7 +85,10 @@
 	            	<ListItem id="appDeliveryListItem" />
 	            </ListSection>
 	        </ListView>
-	       	<ListView id="lvwAppPickups" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	       	<ListView id="lvwAppPickups" headerView="hvAppPickupsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	            <HeaderView id="hvAppPickupsHeaderView">
+	            	<Label id="lblAppPickupsHeaderViewLabel" />
+            	</HeaderView>
 	            <Templates>
 	                <ItemTemplate id="appPickupTemplate" height="80" name="appPickupTemplate" >
 	                    <ImageView bindId="appPickupLeftImage" id="label_appPickupLeftImage"/>
@@ -90,7 +103,10 @@
 	            	<ListItem id="appPickupListItem" />
 	            </ListSection>
 	        </ListView>
-	        <ListView id="lvwTradingPickups" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	        <ListView id="lvwTradingPickups" headerView="hvTradingPickupsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	            <HeaderView id="hvTradingPickupsHeaderView">
+	            	<Label id="lblTradingPickupsHeaderViewLabel" />
+            	</HeaderView>
 	            <Templates>
 	                <ItemTemplate id="tradingPickupTemplate" height="80" name="tradingPickupTemplate" >
 	                	<ImageView bindId="tradingPickupLeftImage" id="label_tradingPickupLeftImage"/>
@@ -104,7 +120,10 @@
 	            	<ListItem id="tradingPickupListItem" />
 	            </ListSection>
 	        </ListView>
-	        <ListView id="lvwTradingPartners" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	        <ListView id="lvwTradingPartners" headerView="hvTradingPickupsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	            <HeaderView id="hvTradingPartnersHeaderView">
+	            	<Label id="lblTradingPartnersHeaderViewLabel" />
+            	</HeaderView>
 	            <Templates>
 	                <ItemTemplate id="tradingPartnerDetailTemplate" height="80" name="tradingPartnerDetailTemplate" >
 	                	<ImageView bindId="tradingPartnerLeftImage" id="label_tradingPartnerLeftImage"/>

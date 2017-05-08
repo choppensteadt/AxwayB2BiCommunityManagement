@@ -33,7 +33,7 @@ function getCommunities() {
 				var communityId = response.results[i][id];
 
 				communities.push({
-						leftimage:{image:"/images/community.gif"},
+						leftimage:{image:"/images/community.png"},
 						communityName:{text:communityName},
 						primaryContact:{text:secondLineText},
 						communityId:{text:communityId},						

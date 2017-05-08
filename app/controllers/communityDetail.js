@@ -44,7 +44,7 @@ function getCommunityContacts(){
 	hideAllTabs();
 
 	$.lvwContacts.show();
-	$.lblTabTitle.text = L("community_detail_contacts_tab_label");
+	$.lblContactsHeaderViewLabel.text = L("community_detail_contacts_tab_label");
 	
 	$.activityIndicator.show();	
 	
@@ -89,7 +89,7 @@ function getCommunityCertificates(){
 	hideAllTabs();
 	
 	$.lvwCertificates.show();
-	$.lblTabTitle.text = L("community_detail_cert_tab_label");
+	$.lblCertificatesHeaderViewLabel.text = L("community_detail_cert_tab_label");
 	
 	$.activityIndicator.show();	
 	
@@ -147,7 +147,7 @@ function getCommunityRoutingIds(){
 	hideAllTabs();
 	
 	$.lvwRoutingIds.show();
-	$.lblTabTitle.text = L("community_detail_routingIds_tab_label");
+	$.lblRoutingIdsHeaderViewLabel.text = L("community_detail_routingIds_tab_label");
 	
 	$.activityIndicator.show();	
 	
@@ -188,7 +188,7 @@ function getApplicationDeliveries(){
 	hideAllTabs();
 
 	$.lvwAppDeliveries.show();
-	$.lblTabTitle.text = L("community_detail_app_deliveries_tab_label");
+	$.lblAppDeliveryHeaderViewLabel.text = L("community_detail_app_deliveries_tab_label");
 
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/application/exchange/delivery?limit=100&offset=0&orderBy=name";
 	var xhr = Ti.Network.createHTTPClient({
@@ -242,7 +242,7 @@ function getApplicationPickups(){
 	hideAllTabs();
 
 	$.lvwAppPickups.show();
-	$.lblTabTitle.text = L("community_detail_app_pickups_tab_label");
+	$.lblAppPickupsHeaderViewLabel.text = L("community_detail_app_pickups_tab_label");
 	
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/application/exchange/pickup?limit=100&offset=0&orderBy=name";
 	var xhr = Ti.Network.createHTTPClient({
@@ -296,8 +296,8 @@ function getCommunityTradingPickups(){
 	hideAllTabs();
 	
 	$.lvwTradingPickups.show();
-	$.lblTabTitle.text = L("community_detail_trading_pickups_tab_label");
-	
+	$.lblTradingPickupsHeaderViewLabel.text = L("community_detail_trading_pickups_tab_label");
+
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/exchange/"+Alloy.Globals.communityID+"/trading/pickup";
 	var xhr = Ti.Network.createHTTPClient({
 		onload: function(e) {
@@ -340,7 +340,7 @@ function getCommunityTradingPartners(){
 	hideAllTabs();
 	
 	$.lvwTradingPartners.show();
-	$.lblTabTitle.text = L("community_detail_trading_partners_tab_label");
+	$.lblTradingPartnersHeaderViewLabel.text = L("community_detail_trading_partners_tab_label");
 	
 	$.activityIndicator.show();	
 	
