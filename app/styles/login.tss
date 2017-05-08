@@ -17,6 +17,9 @@
 	opacity: ".93",
 	borderRadius: "10",
 }
+"#vwLoginView[platform=android formFactor=tablet]": {
+	width: Ti.UI.SIZE,
+}
 "#vwLoginView[platform=android formFactor=handheld]": {
 	width: Ti.UI.SIZE,
 }

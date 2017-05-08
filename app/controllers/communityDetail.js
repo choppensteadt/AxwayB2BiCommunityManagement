@@ -63,7 +63,7 @@ function getCommunityContacts(){
 				var email = response.results[i].email;
 
 				table.push({
-					leftimage:{image:"/images/contact.png"},
+					contactLeftImage:{image:"/images/contact.png"},
 					contactName:{text:name},
 					contactPhone:{text:phone},
 					contactEmail:{text:email},
@@ -106,15 +106,27 @@ function getCommunityCertificates(){
 				var state = response.results[i].certificateState;
 				var usage = response.results[i].certificateUsage;
 				var expirationDate = response.results[i].validTo;
+				var formattedExpirationDate = new Date(expirationDate).toLocaleDateString();
 
+				var ed = new Date(expirationDate).getTime();
+				var dte = getNumberOfDaysUntilExpiration(ed);
+				
+				// If certificate will expire within 31 days, but has not already expired then show an alert icon.
+				if (dte < 31 && dte >= 0) {
+					var expire = "/images/alert.png";
+				}
+				else {
+					var expire = "";					
+				}
 				table.push({
-					leftimage:{image:"/images/certificate.png"},
+					certificateLeftImage:{image:"/images/certificate.png"},
 					certName:{text:name},
 					certState:{text:state},
 					certUsage:{text:usage},
-					certExpirationDate:{text:expirationDate},
+					certExpirationDate:{text:formattedExpirationDate},
+					certificateRightImage:{image:expire},
 					template:'certDetailTemplate'}
-				);
+				);	
 			}
 			$.certListSection.setItems(table);
 			$.activityIndicator.hide();			
@@ -152,7 +164,7 @@ function getCommunityRoutingIds(){
 				var routingId = response.results[i].routingId;
 
 				table.push({
-					leftimage:{image:"/images/routing.png"},
+					routingIdLeftImage:{image:"/images/routing.png"},
 					routingId:{text:routingId},
 					template:'routingIdDetailTemplate'}
 				);
@@ -199,7 +211,7 @@ function getApplicationDeliveries(){
 
 				// Push the values to the array
 				appDeliveries.push({
-					leftimage:{image:"/images/pickup.png"},
+					appDeliveryLeftImage:{image:"/images/pickup.png"},
 					appDeliveryId:{text:appDeliveryId},
 					appDeliveryName:{text:name},
 					appDeliveryProtocol:{text:protocol},
@@ -253,7 +265,7 @@ function getApplicationPickups(){
 
 				// Push the values to the array
 				appPickups.push({
-					leftimage:{image:"/images/pickup.png"},
+					appPickupLeftImage:{image:"/images/pickup.png"},
 					appPickupId:{text:appPickupId},
 					appPickupName:{text:name},
 					appPickupProtocol:{text:protocol},
@@ -301,7 +313,7 @@ function getCommunityTradingPickups(){
 				var url = response.results[i].url;
 				
 				pickups.push({
-					leftimage:{image:"/images/pickup.png"},
+					tradingPickupLeftImage:{image:"/images/pickup.png"},
 					tradingPickupId:{text:pickupId},
 					tradingPickupName:{text:name},
 					tradingPickupProtocol:{text:protocol},
@@ -356,7 +368,7 @@ function getCommunityTradingPartners(){
 						var tradingPartnerDefaultRoutingId = tradingPartnerDetailResponse.defaultRoutingId.routingId;
 
 						tradingPartners.push({
-							leftimage:{image:"/images/partner.png"},
+							tradingPartnerLeftImage:{image:"/images/partner.png"},
 							tradingPartnerId:{text:tradingPartnerId},
 							tradingPartnerName:{text:tradingPartnerName},
 							tradingPartnerPrimaryContactName:{text:primaryContactName},
@@ -429,4 +441,15 @@ function hideAllTabs(){
 	$.lvwRoutingIds.hide();
 	$.lvwCertificates.hide();
 	return true;	
+}
+function showHelp(){
+	alert("Help");
+}
+function getNumberOfDaysUntilExpiration(expirationDate){
+	var d = new Date();
+	var n = d.getTime();
+	var e = expirationDate;
+	var mte = e - n;
+	var dte = (mte/86400000);
+	return dte;
 }
