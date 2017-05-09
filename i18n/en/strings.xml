@@ -11,8 +11,7 @@
 	<string name="remember">Remember me</string>
 	
 	<!-- Communities Page -->
-	<string name="communities_title">Community Management</string>
-	<string name="communities_banner">Communities</string>
+	<string name="communities_title"> Communities</string>
 	
 	<!-- Community Detail Page -->
 	<string name="community_detail_contacts_tab_label"> Contacts</string>

@@ -11,15 +11,14 @@
 	<string name="remember">Recuérdame</string>
 	
 	<!-- Communities Page -->
-	<string name="communities_title">Gestión Comunitaria</string>
-	<string name="communities_banner">Comunidades</string>
+	<string name="communities_title"> Comunidades</string>
 	
 	<!-- Community Detail Page -->
-	<string name="community_detail_contacts_tab_label">Contactos</string>
-	<string name="community_detail_cert_tab_label">Certificados</string>
-	<string name="community_detail_routingIds_tab_label">Routing IDs</string>
-	<string name="community_detail_app_deliveries_tab_label">Entregas de Aplicaciones</string>
-	<string name="community_detail_app_pickups_tab_label">Pastillas de Aplicación</string>
-	<string name="community_detail_trading_pickups_tab_label">Pastillas Comerciales</string>
-	<string name="community_detail_trading_partners_tab_label">Socios Comerciales</string>
+	<string name="community_detail_contacts_tab_label"> Contactos</string>
+	<string name="community_detail_cert_tab_label"> Certificados</string>
+	<string name="community_detail_routingIds_tab_label"> Routing IDs</string>
+	<string name="community_detail_app_deliveries_tab_label"> Entregas de Aplicaciones</string>
+	<string name="community_detail_app_pickups_tab_label"> Pastillas de Aplicación</string>
+	<string name="community_detail_trading_pickups_tab_label"> Pastillas Comerciales</string>
+	<string name="community_detail_trading_partners_tab_label"> Socios Comerciales</string>
 </resources>

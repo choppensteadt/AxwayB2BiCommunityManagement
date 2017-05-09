@@ -4,11 +4,10 @@
 			<MenuItem id="mtmLogout" title="L('mainmenu_logout')" onClick="mnuLogoutClicked" />
 		</Menu>
 		<Label id="lblHeader" />
-		<Label id="lblBanner" />
 		<ListView id="lvwCommunities" onItemclick="openCommunityDetail" canScroll="true" showVerticalScrollIndicator="true" >
             <Templates>
                 <ItemTemplate id="communityDetailTemplate" height="80" name="communityDetailTemplate" >
-                	<ImageView bindId="leftimage" id="label_leftimage"/>
+                	<ImageView bindId="leftimage" id="label_leftimage" />
                     <Label bindId="communityName" id="label_communityName" />
                     <Label bindId="primaryContact" id="label_primaryContact" />
                     <Label bindId="communityId" visible="false" id="label_primaryContactEmail" />

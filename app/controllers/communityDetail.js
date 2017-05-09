@@ -353,41 +353,46 @@ function getCommunityTradingPartners(){
 			
 			for (var i=0; i < response.results.length; i++){
 
-				var tradingPartnerIdString = response.results[i];
-				var tradingPartnerId = tradingPartnerIdString.slice(20);
-
-				var url2 = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/tradingPartners/"+tradingPartnerId;
-				var xhr2 = Ti.Network.createHTTPClient({
-			
-				    onload: function(e) {
-				    					    	
-						var tradingPartnerDetailResponse = JSON.parse(this.responseText);
-						var tradingPartnerName = tradingPartnerDetailResponse.partyName;
-						var primaryContactName = tradingPartnerDetailResponse.primaryContact.name;
-						var primaryContactEmail = tradingPartnerDetailResponse.primaryContact.email;
-						var tradingPartnerDefaultRoutingId = tradingPartnerDetailResponse.defaultRoutingId.routingId;
-
-						tradingPartners.push({
-							tradingPartnerLeftImage:{image:"/images/partner.png"},
-							tradingPartnerId:{text:tradingPartnerId},
-							tradingPartnerName:{text:tradingPartnerName},
-							tradingPartnerPrimaryContactName:{text:primaryContactName},
-							tradingPartnerPrimaryContactEmail:{text:primaryContactEmail},
-							tradingPartnerDefaultRoutingId:{text:tradingPartnerDefaultRoutingId},
-							template:'tradingPartnerDetailTemplate'}
-						);
-						$.tradingPartnerListSection.setItems(tradingPartners);
-						$.activityIndicator.hide();
-					},
-				    onerror: function(e) {
-						$.activityIndicator.hide();
-			            alert(e.error);
-				        return false;
-				    },
-				    timeout:10000  /* in milliseconds */
-				});
-				xhr2.open("GET", url2);
-				xhr2.send();
+				if (response.results.length > 0){
+					var tradingPartnerIdString = response.results[i];
+					var tradingPartnerId = tradingPartnerIdString.slice(20);
+	
+					var url2 = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/tradingPartners/"+tradingPartnerId;
+					var xhr2 = Ti.Network.createHTTPClient({
+				
+					    onload: function(e) {
+					    					    	
+							var tradingPartnerDetailResponse = JSON.parse(this.responseText);
+							var tradingPartnerName = tradingPartnerDetailResponse.partyName;
+							var primaryContactName = tradingPartnerDetailResponse.primaryContact.name;
+							var primaryContactEmail = tradingPartnerDetailResponse.primaryContact.email;
+							var tradingPartnerDefaultRoutingId = tradingPartnerDetailResponse.defaultRoutingId.routingId;
+	
+							tradingPartners.push({
+								tradingPartnerLeftImage:{image:"/images/partner.png"},
+								tradingPartnerId:{text:tradingPartnerId},
+								tradingPartnerName:{text:tradingPartnerName},
+								tradingPartnerPrimaryContactName:{text:primaryContactName},
+								tradingPartnerPrimaryContactEmail:{text:primaryContactEmail},
+								tradingPartnerDefaultRoutingId:{text:tradingPartnerDefaultRoutingId},
+								template:'tradingPartnerDetailTemplate'}
+							);
+							$.tradingPartnerListSection.setItems(tradingPartners);
+							$.activityIndicator.hide();
+						},
+					    onerror: function(e) {
+							$.activityIndicator.hide();
+				            alert(e.error);
+					        return false;
+					    },
+					    timeout:10000  /* in milliseconds */
+					});
+					xhr2.open("GET", url2);
+					xhr2.send();
+				} else {
+					// If there are no trading partners for this community don't run any additional queries
+					$.activityIndicator.hide();
+				}
 			}
 		},
 	    onerror: function(e) {
