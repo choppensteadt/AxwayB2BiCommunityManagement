@@ -14,6 +14,7 @@ hideAllTabs();
 getCommunity(communityId);
 getCommunityPartners();
 getCommunityContacts();
+$.ivGetCommunityContacts.borderColor = "black";
 
 function mnuLogoutClicked() {
    	var rememberMeFromProperties = Ti.App.Properties.getBool('remember'); 
@@ -45,9 +46,10 @@ function getCommunityPartners(){
 function getCommunityContacts(){
 
 	hideAllTabs();
+	hideAllBorderColors();
 
 	$.lvwContacts.show();
-	$.lblContactsHeaderViewLabel.text = L("community_detail_contacts_tab_label");
+	$.ivGetCommunityContacts.borderColor = "black";
 	
 	$.activityIndicator.show();	
 	
@@ -66,6 +68,11 @@ function getCommunityContacts(){
 				var email = response.results[i].email;
 
 				table.push({
+					properties: {
+						searchableText: name,
+						backgroundColor: "transparent",
+						selectedBackgroundColor: "#CCC",
+					},
 					contactLeftImage:{image:"/images/contact.png"},
 					contactName:{text:name},
 					contactPhone:{text:phone},
@@ -90,9 +97,10 @@ function getCommunityContacts(){
 function getCommunityCertificates(){
 
 	hideAllTabs();
+	hideAllBorderColors();
 	
 	$.lvwCertificates.show();
-	$.lblCertificatesHeaderViewLabel.text = L("community_detail_cert_tab_label");
+	$.ivGetCommunityCertificates.borderColor = "black";
 	
 	$.activityIndicator.show();	
 	
@@ -122,6 +130,11 @@ function getCommunityCertificates(){
 					var expire = "";					
 				}
 				table.push({
+					properties: {
+						searchableText: name,
+						backgroundColor: "transparent",
+						selectedBackgroundColor: "#CCC",
+					},
 					certificateLeftImage:{image:"/images/certificate.png"},
 					certName:{text:name},
 					certState:{text:state},
@@ -148,9 +161,10 @@ function getCommunityCertificates(){
 function getCommunityRoutingIds(){
 
 	hideAllTabs();
+	hideAllBorderColors();
 	
 	$.lvwRoutingIds.show();
-	$.lblRoutingIdsHeaderViewLabel.text = L("community_detail_routingIds_tab_label");
+	$.ivGetCommunityRoutingIds.borderColor = "black";
 	
 	$.activityIndicator.show();	
 	
@@ -176,6 +190,11 @@ function getCommunityRoutingIds(){
 				}
 
 				table.push({
+					properties: {
+						searchableText: routingId,
+						backgroundColor: "transparent",
+						selectedBackgroundColor: "#CCC",
+					},
 					routingIdLeftImage:{image:"/images/routing.png"},
 					routingIdId:{text:routingId},
 					routingId:{text:routingId},
@@ -200,9 +219,10 @@ function getCommunityRoutingIds(){
 function getApplicationDeliveries(){
 
 	hideAllTabs();
+	hideAllBorderColors();
 
 	$.lvwAppDeliveries.show();
-	$.lblAppDeliveryHeaderViewLabel.text = L("community_detail_app_deliveries_tab_label");
+	$.ivGetApplicationDeliveries.borderColor = "black";
 
 	$.activityIndicator.show();
 
@@ -227,6 +247,11 @@ function getApplicationDeliveries(){
 
 				// Push the values to the array
 				appDeliveries.push({
+					properties: {
+						searchableText: name,
+						backgroundColor: "transparent",
+						selectedBackgroundColor: "#CCC",
+					},
 					appDeliveryLeftImage:{image:"/images/pickup.png"},
 					appDeliveryId:{text:appDeliveryId},
 					appDeliveryName:{text:name},
@@ -256,9 +281,10 @@ function getApplicationDeliveries(){
 function getApplicationPickups(){
 
 	hideAllTabs();
+	hideAllBorderColors();
 
 	$.lvwAppPickups.show();
-	$.lblAppPickupsHeaderViewLabel.text = L("community_detail_app_pickups_tab_label");
+	$.ivGetApplicationPickups.borderColor = "black";
 
 	$.activityIndicator.show();
 	
@@ -283,6 +309,11 @@ function getApplicationPickups(){
 
 				// Push the values to the array
 				appPickups.push({
+					properties: {
+						searchableText: name,
+						backgroundColor: "transparent",
+						selectedBackgroundColor: "#CCC",
+					},
 					appPickupLeftImage:{image:"/images/pickup.png"},
 					appPickupId:{text:appPickupId},
 					appPickupName:{text:name},
@@ -312,9 +343,10 @@ function getApplicationPickups(){
 function getCommunityTradingPickups(){
 
 	hideAllTabs();
+	hideAllBorderColors();
 	
 	$.lvwTradingPickups.show();
-	$.lblTradingPickupsHeaderViewLabel.text = L("community_detail_trading_pickups_tab_label");
+	$.ivGetCommunityTradingPickups.borderColor = "black";
 
 	$.activityIndicator.show();
 
@@ -333,6 +365,11 @@ function getCommunityTradingPickups(){
 				var url = response.results[i].url;
 				
 				pickups.push({
+					properties: {
+						searchableText: name,
+						backgroundColor: "transparent",
+						selectedBackgroundColor: "#CCC",
+					},
 					tradingPickupLeftImage:{image:"/images/pickup.png"},
 					tradingPickupId:{text:pickupId},
 					tradingPickupName:{text:name},
@@ -358,9 +395,10 @@ function getCommunityTradingPickups(){
 function getCommunityTradingPartners(){
 
 	hideAllTabs();
+	hideAllBorderColors();
 	
 	$.lvwTradingPartners.show();
-	$.lblTradingPartnersHeaderViewLabel.text = L("community_detail_trading_partners_tab_label");
+	$.ivGetCommunityTradingPartners.borderColor = "black";
 	
 	$.activityIndicator.show();	
 	
@@ -389,6 +427,11 @@ function getCommunityTradingPartners(){
 							var tradingPartnerDefaultRoutingId = tradingPartnerDetailResponse.defaultRoutingId.routingId;
 	
 							tradingPartners.push({
+								properties: {
+									searchableText: tradingPartnerName,
+									backgroundColor: "transparent",
+									selectedBackgroundColor: "#CCC",
+								},
 								tradingPartnerLeftImage:{image:"/images/partner.png"},
 								tradingPartnerId:{text:tradingPartnerId},
 								tradingPartnerName:{text:tradingPartnerName},
@@ -465,7 +508,17 @@ function hideAllTabs(){
 	$.lvwContacts.hide();
 	$.lvwRoutingIds.hide();
 	$.lvwCertificates.hide();
-	return true;	
+	return true;
+}
+function hideAllBorderColors(){
+	$.ivGetCommunityContacts.borderColor = "white";
+	$.ivGetCommunityCertificates.borderColor = "white";
+	$.ivGetCommunityRoutingIds.borderColor = "white";
+	$.ivGetApplicationDeliveries.borderColor = "white";
+	$.ivGetApplicationPickups.borderColor = "white";
+	$.ivGetCommunityTradingPickups.borderColor = "white";
+	$.ivGetCommunityTradingPartners.borderColor = "white";
+	return true;
 }
 function showHelp(){
 	alert("Help");

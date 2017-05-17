@@ -15,7 +15,7 @@
                     <ImageView bindId="notificationSentYesNo" id="label_notificationSentYesNo" />
                 </ItemTemplate>
             </Templates>
-			<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Table Search" />
+			<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Communities" />
             <ListSection id="communityListSection" >
             	<ListItem id="communityListItem" searchableText="" />
             </ListSection>

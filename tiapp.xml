@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
+    <property name="active-environment-name" type="string">production</property>
+    <property name="active-environment-id" type="string">production</property>
+    <property name="acs-authbase-url" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url" type="string">https://api.cloud.appcelerator.com</property>
     <id>com.axway.b2bcommunitymanagement</id>
     <name>AxwayB2BCommunityManagement</name>
     <version>1.0</version>

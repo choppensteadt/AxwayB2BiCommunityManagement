@@ -464,6 +464,15 @@
   		fontFamily: 'OpenSans-Regular',
   	},
 }
+"#searchView[platform=android formFactor=tablet]":{
+	color: "white",
+	backgroundColor: "#3d4051",
+	opacity: ".93",
+	font: {
+		fontSize: 22,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
 "#activityIndicator[platform=android]": {
 	top: '50%',
 	left: '50%',

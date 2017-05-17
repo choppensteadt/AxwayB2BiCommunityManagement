@@ -28,9 +28,10 @@
 "#lvwCommunities[platform=android formFactor=handheld]":{
 	top: 50,
 }
-"#SearchView[platform=android formFactor=tablet]":{
-	color: "black",
-	backgroundColor: "white",
+"#searchView[platform=android formFactor=tablet]":{
+	color: "white",
+	backgroundColor: "#3d4051",
+	opacity: ".93",
 	font: {
 		fontSize: 22,
   		fontFamily: 'OpenSans-Regular',

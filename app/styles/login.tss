@@ -99,6 +99,7 @@
 "#btnLogin[platform=android formFactor=tablet]": {
 	top: 405,
 	width: 150,
+	color: "white",
 	backgroundColor: "#407CA0",
 	borderRadius: "20",
 }

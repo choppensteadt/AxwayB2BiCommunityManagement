@@ -19,10 +19,7 @@
 			<ImageView id="ivCloud" image="/images/navInternet.gif" />
 			<ImageView id="ivGetCommunityTradingPartners" image="/images/navTradingPartners.gif" onClick="getCommunityTradingPartners" />
 			<Label id="lblNumberOfTradingPartners" />
-	        <ListView id="lvwContacts" headerView="hvContactsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
-	            <HeaderView id="hvContactsHeaderView">
-	            	<Label id="lblContactsHeaderViewLabel" />
-            	</HeaderView>
+	        <ListView id="lvwContacts" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
 	                <ItemTemplate id="contactDetailTemplate" height="80" name="contactDetailTemplate" >
 	                	<ImageView bindId="contactLeftImage" id="label_contactLeftImage"/>
@@ -31,14 +28,12 @@
 	                    <Label bindId="contactPhone" id="label_contactPhone" />
 	                </ItemTemplate>
 	            </Templates>
+				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Contacts" />
 	            <ListSection id="contactListSection" >
 	            	<ListItem id="contactListItem" />
 	            </ListSection>
 	        </ListView>
-			<ListView id="lvwCertificates" headerView="hvCertificatesHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
-	            <HeaderView id="hvCertificatesHeaderView">
-	            	<Label id="lblCertificatesHeaderViewLabel" />
-            	</HeaderView>
+			<ListView id="lvwCertificates" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
 	                <ItemTemplate id="certDetailTemplate" height="80" name="certDetailTemplate" >
 	                	<ImageView bindId="certificateLeftImage" id="label_certificateLeftImage"/>
@@ -49,14 +44,12 @@
 						<ImageView bindId="certificateRightImage" id="label_certificateRightImage"/>
 	                </ItemTemplate>
 	            </Templates>
+	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Certificates" />
 	            <ListSection id="certListSection" >
 	            	<ListItem id="certListItem" />
 	            </ListSection>
 	        </ListView>
-	   		<ListView id="lvwRoutingIds" headerView="hvRoutingIdsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
-	            <HeaderView id="hvRoutingIdsHeaderView">
-	            	<Label id="lblRoutingIdsHeaderViewLabel" />
-            	</HeaderView>
+	   		<ListView id="lvwRoutingIds" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
 	                <ItemTemplate id="RoutingIdDetailTemplate" height="80" name="routingIdDetailTemplate" >
 	                	<Label bindId="routingIdId" id="label_routingIdId" visible="false" />
@@ -65,14 +58,12 @@
 	                	<ImageView bindId="routingIdRightImage" id="label_routingIdRightImage"/>
 	                </ItemTemplate>
 	            </Templates>
+				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Routing IDs" />
 	            <ListSection id="routingIdListSection" >
 	            	<ListItem id="routingIdListItem" />
 	            </ListSection>
 	        </ListView>
-	      	<ListView id="lvwAppDeliveries" headerView="hvAppDeliveryHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
-	            <HeaderView id="hvAppDeliveryHeaderView">
-	            	<Label id="lblAppDeliveryHeaderViewLabel" />
-            	</HeaderView>
+	      	<ListView id="lvwAppDeliveries" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
 	                <ItemTemplate id="appDeliveryTemplate" height="80" name="appDeliveryTemplate" >
 	                	<ImageView bindId="appDeliveryLeftImage" id="label_appDeliveryLeftImage"/>
@@ -83,14 +74,12 @@
 						<Label bindId="appDeliveryUrl" id="label_appDeliveryUrl" visible="false" />
 					</ItemTemplate>
 	            </Templates>
+	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Application Deliveries" />
 	            <ListSection id="appDeliveryListSection" >
 	            	<ListItem id="appDeliveryListItem" />
 	            </ListSection>
 	        </ListView>
-	       	<ListView id="lvwAppPickups" headerView="hvAppPickupsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
-	            <HeaderView id="hvAppPickupsHeaderView">
-	            	<Label id="lblAppPickupsHeaderViewLabel" />
-            	</HeaderView>
+	       	<ListView id="lvwAppPickups" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
 	                <ItemTemplate id="appPickupTemplate" height="80" name="appPickupTemplate" >
 	                    <ImageView bindId="appPickupLeftImage" id="label_appPickupLeftImage"/>
@@ -101,14 +90,12 @@
 						<Label bindId="appPickupUrl" id="label_appPickupUrl" visible="false" />
 	                </ItemTemplate>
 	            </Templates>
+				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Application Pickups" />
 	            <ListSection id="appPickupListSection" >
 	            	<ListItem id="appPickupListItem" />
 	            </ListSection>
 	        </ListView>
-	        <ListView id="lvwTradingPickups" headerView="hvTradingPickupsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
-	            <HeaderView id="hvTradingPickupsHeaderView">
-	            	<Label id="lblTradingPickupsHeaderViewLabel" />
-            	</HeaderView>
+	        <ListView id="lvwTradingPickups" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
 	                <ItemTemplate id="tradingPickupTemplate" height="80" name="tradingPickupTemplate" >
 	                	<ImageView bindId="tradingPickupLeftImage" id="label_tradingPickupLeftImage"/>
@@ -118,14 +105,12 @@
 						<Label bindId="tradingPickupUrl" id="label_tradingPickupUrl" />
 	                </ItemTemplate>
 	            </Templates>
+				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Trading Pickups" />
 	            <ListSection id="tradingPickupListSection" >
 	            	<ListItem id="tradingPickupListItem" />
 	            </ListSection>
 	        </ListView>
-	        <ListView id="lvwTradingPartners" headerView="hvTradingPartnersHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
-	            <HeaderView id="hvTradingPartnersHeaderView">
-	            	<Label id="lblTradingPartnersHeaderViewLabel" />
-            	</HeaderView>
+	        <ListView id="lvwTradingPartners" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
 	                <ItemTemplate id="tradingPartnerDetailTemplate" height="80" name="tradingPartnerDetailTemplate" >
 	                	<ImageView bindId="tradingPartnerLeftImage" id="label_tradingPartnerLeftImage"/>
@@ -136,6 +121,7 @@
 						<Label bindId="tradingPartnerDefaultRoutingId" id="label_tradingPartnerDefaultRoutingId" />
 	                </ItemTemplate>
 	            </Templates>
+	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Trading Partners" />
 	            <ListSection id="tradingPartnerListSection" >
 	            	<ListItem id="tradingPartnerListItem" />
 	            </ListSection>
