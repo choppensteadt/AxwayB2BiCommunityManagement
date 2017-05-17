@@ -40,15 +40,19 @@ if(rememberMeFromProperties == true){
 }
 // Set arguments and pass them to login() function
 function btnLoginClicked() {
-	$.activityIndicator.show();
-   	var hostIP = $.txtHostIP.value;
-   	var username = $.txtUserName.value;
-	var password = $.txtPassword.value;
-
-	if($.swcKeepMeSignedIn.value == true){
-		saveLoginInformationToProperties(username, hostIP);
+	if ($.txtUserName.value.length != 0 && $.txtPassword.value.length != 0) {
+		$.activityIndicator.show();
+	   	var hostIP = $.txtHostIP.value;
+	   	var username = $.txtUserName.value;
+		var password = $.txtPassword.value;
+	
+		if($.swcKeepMeSignedIn.value == true){
+			saveLoginInformationToProperties(username, hostIP);
+		}
+		login(hostIP, username, password);
+	} else {
+		alert("Please enter a username and password.");
 	}
-	login(hostIP, username, password);
 }
 function login(hostIP, username, password) {
 	

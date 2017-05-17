@@ -1,6 +1,9 @@
 var args = $.args;
-var communityID = args.communityID;
-Alloy.Globals.communityID = communityID;
+var communityId = args.communityId;
+Alloy.Globals.communityId = communityId;
+
+var defaultRoutingIdId = args.defaultRoutingIdId;
+Alloy.Globals.defaultRoutingIdId = defaultRoutingIdId;
 
 $.activityIndicator.hide();
 
@@ -8,7 +11,7 @@ $.activityIndicator.hide();
 hideAllTabs();
 
 // Setup the default page
-getCommunity(communityID);
+getCommunity(communityId);
 getCommunityPartners();
 getCommunityContacts();
 
@@ -18,7 +21,7 @@ function mnuLogoutClicked() {
 	Alloy.createController('login').getView().open();
 }
 function getCommunityPartners(){
-	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityID+"/subscriptions?limit=50&offset=0";
+	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityId+"/subscriptions?limit=50&offset=0";
 	var xhr = Ti.Network.createHTTPClient({
 
 	    onload: function(e) {
@@ -48,7 +51,7 @@ function getCommunityContacts(){
 	
 	$.activityIndicator.show();	
 	
-	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityID+"/contacts";
+	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityId+"/contacts";
 	var xhr = Ti.Network.createHTTPClient({
 	    
 	    onload: function(e) {
@@ -93,7 +96,7 @@ function getCommunityCertificates(){
 	
 	$.activityIndicator.show();	
 	
-	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/security/"+Alloy.Globals.communityID+"/certificate/private";
+	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/security/"+Alloy.Globals.communityId+"/certificate/private";
 	var xhr = Ti.Network.createHTTPClient({
 	    
 	    onload: function(e) {
@@ -101,7 +104,7 @@ function getCommunityCertificates(){
 			var table = [];
 						
 			for(var i in response.results){
-				
+								
 				var name = response.results[i].friendlyName;
 				var state = response.results[i].certificateState;
 				var usage = response.results[i].certificateUsage;
@@ -151,7 +154,7 @@ function getCommunityRoutingIds(){
 	
 	$.activityIndicator.show();	
 	
-	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityID+"/routingIds";
+	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityId+"/routingIds";
 	var xhr = Ti.Network.createHTTPClient({
 	    
 	    onload: function(e) {
@@ -161,11 +164,22 @@ function getCommunityRoutingIds(){
 						
 			for(var i in response.results){
 				
+				// Using the @ symbol in a key value pair key requires a two step process
+				var id = "@id";
+				var routingIdId = response.results[i][id];
 				var routingId = response.results[i].routingId;
+				
+				if(routingIdId == Alloy.Globals.defaultRoutingIdId){
+					var routingIdImage = "/images/default-icon.png";
+				} else {
+					var routingIdImage = "";
+				}
 
 				table.push({
 					routingIdLeftImage:{image:"/images/routing.png"},
+					routingIdId:{text:routingId},
 					routingId:{text:routingId},
+					routingIdRightImage:{image:routingIdImage},
 					template:'routingIdDetailTemplate'}
 				);
 			}
@@ -189,6 +203,8 @@ function getApplicationDeliveries(){
 
 	$.lvwAppDeliveries.show();
 	$.lblAppDeliveryHeaderViewLabel.text = L("community_detail_app_deliveries_tab_label");
+
+	$.activityIndicator.show();
 
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/application/exchange/delivery?limit=100&offset=0&orderBy=name";
 	var xhr = Ti.Network.createHTTPClient({
@@ -243,6 +259,8 @@ function getApplicationPickups(){
 
 	$.lvwAppPickups.show();
 	$.lblAppPickupsHeaderViewLabel.text = L("community_detail_app_pickups_tab_label");
+
+	$.activityIndicator.show();
 	
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/application/exchange/pickup?limit=100&offset=0&orderBy=name";
 	var xhr = Ti.Network.createHTTPClient({
@@ -298,7 +316,9 @@ function getCommunityTradingPickups(){
 	$.lvwTradingPickups.show();
 	$.lblTradingPickupsHeaderViewLabel.text = L("community_detail_trading_pickups_tab_label");
 
-	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/exchange/"+Alloy.Globals.communityID+"/trading/pickup";
+	$.activityIndicator.show();
+
+	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/exchange/"+Alloy.Globals.communityId+"/trading/pickup";
 	var xhr = Ti.Network.createHTTPClient({
 		onload: function(e) {
 			var response = JSON.parse(this.responseText);
@@ -344,7 +364,7 @@ function getCommunityTradingPartners(){
 	
 	$.activityIndicator.show();	
 	
-	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityID+"/subscriptions?limit=50&offset=0";
+	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityId+"/subscriptions?limit=50&offset=0";
 	var xhr = Ti.Network.createHTTPClient({
 
 	    onload: function(e) {
@@ -405,9 +425,9 @@ function getCommunityTradingPartners(){
 	xhr.open("GET", url);
 	xhr.send();
 }
-function getCommunity(communityID) {
+function getCommunity(communityId) {
 	$.activityIndicator.show();
-	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+communityID;
+	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+communityId;
 	var xhr = Ti.Network.createHTTPClient({
 
 		onload: function(e) {

@@ -59,8 +59,10 @@
             	</HeaderView>
 	            <Templates>
 	                <ItemTemplate id="RoutingIdDetailTemplate" height="80" name="routingIdDetailTemplate" >
+	                	<Label bindId="routingIdId" id="label_routingIdId" visible="false" />
 	                	<ImageView bindId="routingIdLeftImage" id="label_routingIdLeftImage"/>
 	                    <Label bindId="routingId" id="label_routingId" />
+	                	<ImageView bindId="routingIdRightImage" id="label_routingIdRightImage"/>
 	                </ItemTemplate>
 	            </Templates>
 	            <ListSection id="routingIdListSection" >
@@ -120,7 +122,7 @@
 	            	<ListItem id="tradingPickupListItem" />
 	            </ListSection>
 	        </ListView>
-	        <ListView id="lvwTradingPartners" headerView="hvTradingPickupsHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	        <ListView id="lvwTradingPartners" headerView="hvTradingPartnersHeaderView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
 	            <HeaderView id="hvTradingPartnersHeaderView">
 	            	<Label id="lblTradingPartnersHeaderViewLabel" />
             	</HeaderView>

@@ -5,8 +5,10 @@ var communities = [];
 
 getCommunities();
 
+//function search(e){
+	// $.lvwCommunities.searchText = e.value;
+//}
 function getCommunities() {
-
 	$.activityIndicator.show();
 
 	var KeyId = "aa719fec-a2e9-48e7-9a03-2fab2a5be0b1";
@@ -30,16 +32,22 @@ function getCommunities() {
 //				Using the @ symbol in a key value pair key requires a two step process
 				var id = "@id";
 				var communityId = response.results[i][id];
+				var defaultRoutingIdId = response.results[i].defaultRoutingId[id];
 
 				communities.push({
+						properties: {
+							searchableText: communityName,
+							backgroundColor: "transparent",
+							selectedBackgroundColor: "#CCC",
+						},
 						leftimage:{image:"/images/community.png"},
 						communityName:{text:communityName},
 						primaryContact:{text:secondLineText},
-						communityId:{text:communityId},						
+						communityId:{text:communityId},
+						defaultRoutingIdId:{text:defaultRoutingIdId},					
 						template:'communityDetailTemplate'}
 				);
 			}
-						
 			$.communityListSection.setItems(communities);
 			$.activityIndicator.hide();	
 		},
@@ -50,22 +58,20 @@ function getCommunities() {
 	    },
 	    timeout:5000  /* in milliseconds */
 	});
-	
 	xhr.open("GET", url);
 	xhr.setRequestHeader('KeyId',KeyId);
 	xhr.send();
 }
-
 function mnuLogoutClicked() {
 	var rememberMeFromProperties = Ti.App.Properties.getBool('remember'); 
 	Ti.App.fireEvent('cleanUpAfterLogoutEvent');
 	Alloy.createController('login').getView().open();
 }
-
 function openCommunityDetail(e){
 	var community = $.communityListSection.getItemAt(e.itemIndex);
-	var communityID = community.communityId.text;
-	var args = {"communityID":communityID};
+	var communityId = community.communityId.text;
+	var defaultRoutingIdId = community.defaultRoutingIdId.text;
+	var args = {"communityId":communityId,"defaultRoutingIdId":defaultRoutingIdId};
 	var communityDetail = Alloy.createController('communityDetail',args).getView();
 	communityDetail.open();	
 }

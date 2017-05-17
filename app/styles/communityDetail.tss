@@ -232,6 +232,11 @@
   		fontFamily: 'OpenSans-Regular',
 	}
 }
+"#label_routingIdRightImage[platform=android formFactor=tablet]": {
+	right: 10,
+	width: 40,
+	height: 40
+}
 "#lvwAppDeliveries[platform=android formFactor=tablet]":{
 	top: 280,
 	font: {
