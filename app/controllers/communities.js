@@ -22,18 +22,19 @@ function getCommunities() {
 			var communities = [];
 
 			for(var i in response.results){
-				
-				var communityName = response.results[i].partyName;
-				var communitySubscribedPartners = response.results[i].subscribedPartners;
-				var primaryContact = response.results[i].primaryContact.name;
-				var primaryContactEmail = response.results[i].primaryContact.email;
-				var secondLineText = primaryContact+", "+primaryContactEmail;
 
 //				Using the @ symbol in a key value pair key requires a two step process
 				var id = "@id";
+	
 				var communityId = response.results[i][id];
+				var communityName = response.results[i].partyName;
+				var communitySubscribedPartners = response.results[i].subscribedPartners;
+				var primaryContactId = response.results[i].primaryContact[id];
+				var primaryContact = response.results[i].primaryContact.name;
+				var primaryContactEmail = response.results[i].primaryContact.email;
+				var secondLineText = primaryContact+", "+primaryContactEmail;
 				var defaultRoutingIdId = response.results[i].defaultRoutingId[id];
-
+				
 				communities.push({
 						properties: {
 							searchableText: communityName,
@@ -44,7 +45,8 @@ function getCommunities() {
 						communityName:{text:communityName},
 						primaryContact:{text:secondLineText},
 						communityId:{text:communityId},
-						defaultRoutingIdId:{text:defaultRoutingIdId},					
+						defaultRoutingIdId:{text:defaultRoutingIdId},
+						primaryContactId:{text:primaryContactId},				
 						template:'communityDetailTemplate'}
 				);
 			}
@@ -71,7 +73,8 @@ function openCommunityDetail(e){
 	var community = $.communityListSection.getItemAt(e.itemIndex);
 	var communityId = community.communityId.text;
 	var defaultRoutingIdId = community.defaultRoutingIdId.text;
-	var args = {"communityId":communityId,"defaultRoutingIdId":defaultRoutingIdId};
+	var primaryContactId = community.primaryContactId.text;
+	var args = {"communityId":communityId,"defaultRoutingIdId":defaultRoutingIdId,"primaryContactId":primaryContactId};
 	var communityDetail = Alloy.createController('communityDetail',args).getView();
 	communityDetail.open();	
 }

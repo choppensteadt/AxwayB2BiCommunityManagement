@@ -26,6 +26,7 @@
 	                    <Label bindId="contactName" id="label_contactName" />
 	                    <Label bindId="contactEmail" id="label_contactEmail" />
 	                    <Label bindId="contactPhone" id="label_contactPhone" />
+						<ImageView bindId="primaryRightImage" id="label_primaryRightImage"/>
 	                </ItemTemplate>
 	            </Templates>
 				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Contacts" />
@@ -33,7 +34,7 @@
 	            	<ListItem id="contactListItem" />
 	            </ListSection>
 	        </ListView>
-			<ListView id="lvwCertificates" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+			<ListView id="lvwCertificates" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" onItemclick="alertNotifyOfPendingYN" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
 	                <ItemTemplate id="certDetailTemplate" height="80" name="certDetailTemplate" >
 	                	<ImageView bindId="certificateLeftImage" id="label_certificateLeftImage"/>
@@ -41,7 +42,7 @@
 	                    <Label bindId="certState" id="label_certState" />
 	                    <Label bindId="certUsage" id="label_certUsage" />
                 	    <Label bindId="certExpirationDate" id="label_certExpirationDate" />
-						<ImageView bindId="certificateRightImage" id="label_certificateRightImage"/>
+						<ImageView bindId="certificateRightImage" id="label_certificateRightImage" />
 	                </ItemTemplate>
 	            </Templates>
 	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Certificates" />

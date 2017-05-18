@@ -142,6 +142,11 @@
   		fontFamily: 'OpenSans-Regular',
   	},
 }
+"#label_primaryRightImage[platform=android formFactor=tablet]": {
+	right: 10,
+	width: 40,
+	height: 40
+}
 "#lvwCertificates[platform=android formFactor=tablet]":{
 	top: 280,
 }

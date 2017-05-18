@@ -1,14 +1,19 @@
 var args = $.args;
+
 var communityId = args.communityId;
 Alloy.Globals.communityId = communityId;
 
 var defaultRoutingIdId = args.defaultRoutingIdId;
 Alloy.Globals.defaultRoutingIdId = defaultRoutingIdId;
 
+var primaryContactId = args.primaryContactId;
+Alloy.Globals.primaryContactId = primaryContactId;
+
 $.activityIndicator.hide();
 
-// Start off with all 'tabs' hidden
+// Start off with all 'tabs' hidden & image borders removed
 hideAllTabs();
+hideAllBorderColors();
 
 // Setup the default page
 getCommunity(communityId);
@@ -66,6 +71,14 @@ function getCommunityContacts(){
 				var name = response.results[i].name;
 				var phone = response.results[i].phone;
 				var email = response.results[i].email;
+				var primaryYN = response.results[i].primary;
+
+				if(primaryYN == true){
+					var primaryImage = "/images/default-icon.png";
+					Alloy.Globals.primaryContactEmail = email; 
+				} else {
+					var primaryImage = "";
+				}
 
 				table.push({
 					properties: {
@@ -77,6 +90,7 @@ function getCommunityContacts(){
 					contactName:{text:name},
 					contactPhone:{text:phone},
 					contactEmail:{text:email},
+					primaryRightImage:{image:primaryImage},
 					template:'contactDetailTemplate'}
 				);
 			}
@@ -123,7 +137,7 @@ function getCommunityCertificates(){
 				var dte = getNumberOfDaysUntilExpiration(ed);
 				
 				// If certificate will expire within 31 days, but has not already expired then show an alert icon.
-				if (dte < 31 && dte >= 0) {
+				if (dte < 31 && dte > -1 && state == "OPERATIONAL") {
 					var expire = "/images/alert.png";
 				}
 				else {
@@ -195,7 +209,7 @@ function getCommunityRoutingIds(){
 						backgroundColor: "transparent",
 						selectedBackgroundColor: "#CCC",
 					},
-					routingIdLeftImage:{image:"/images/routing.png"},
+					routingIdLeftImage:{image:"/images/pickup.png"},
 					routingIdId:{text:routingId},
 					routingId:{text:routingId},
 					routingIdRightImage:{image:routingIdImage},
@@ -400,6 +414,9 @@ function getCommunityTradingPartners(){
 	$.lvwTradingPartners.show();
 	$.ivGetCommunityTradingPartners.borderColor = "black";
 	
+	// Refresh the partner count on the community's image map
+	getCommunityPartners();
+	
 	$.activityIndicator.show();	
 	
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/"+Alloy.Globals.communityId+"/subscriptions?limit=50&offset=0";
@@ -457,6 +474,7 @@ function getCommunityTradingPartners(){
 					$.activityIndicator.hide();
 				}
 			}
+			$.activityIndicator.hide();
 		},
 	    onerror: function(e) {
 			$.activityIndicator.hide();
@@ -499,6 +517,50 @@ function getCommunity(communityId) {
 	});
 	xhr.open("GET", url);
 	xhr.send();
+}
+function alertNotifyOfPendingYN(e){
+	var certificate = $.certListSection.getItemAt(e.itemIndex);
+	var certificateAlert = certificate.certificateRightImage.image;
+		
+	if (certificateAlert == "/images/alert.png"){
+		var dialog = Ti.UI.createAlertDialog({
+		    send: 1,
+		    cancel: 2,
+			buttonNames: ['Send', 'Cancel'],
+			message: 'Would you like to a notification of impending certificate expiry to the primary contact of this community?',
+			title: 'Certificate Expiry Notification'
+		});
+		dialog.addEventListener('click', function(e){
+			if (e.index === 1){
+		    	// The cancel button was clicked
+			} 
+			else if (e.index === 0){
+				// The send button was clicked
+				var emailDialog = Ti.UI.createEmailDialog();
+				emailDialog.subject = "Notice of Impending Certificate Expiry";
+				emailDialog.toRecipients = [Alloy.Globals.primaryContactEmail];
+				emailDialog.messageBody = 'One or more private certificates being used to sign and/or encrypt your B2B messages is set to expire within 31 days. \n \n To avoid B2B processing delays, please visit us at https://www.axway.com/en/enterprise-solutions/ecosystem-engagement to update your certificate. \n \n Best regards, \n \n Axway B2B Support Team';
+				emailDialog.open();
+			}
+		});
+		dialog.show();	
+	}
+}
+function notifyPrimaryContactOfPendingCertificateExpiry() {
+	var intent = Ti.Android.createIntent({
+		action: Ti.Android.ACTION_SEND,
+		type: 'text/plain'
+	});
+	intent.putExtra(Ti.Android.EXTRA_EMAIL,['info@axway.com']);
+	intent.putExtra(Ti.Android.EXTRA_BCC,['info@axway.com']);
+	intent.putExtra(Ti.Android.EXTRA_SUBJECT,'Notice of Impending Certificate Expiry');
+	intent.putExtra(Ti.Android.EXTRA_TEXT,'The public key certificate being used to decrypt your B2B messages and validate your digital signature is set to expire within '+Alloy.Globals.daysToExpire+' days. \n \n To avoid B2B processing delays, please visit us at https://www.axway.com/en/enterprise-solutions/ecosystem-engagement to update your certificate. \n \n Best regards, \n \n Axway B2B Support Team');
+
+	try {
+		Ti.Android.currentActivity.startActivity(intent);
+	} catch (ex){
+		Ti.UI.createNotification({message: 'No email applications installed'}).show();
+	}
 }
 function hideAllTabs(){
 	$.lvwAppDeliveries.hide();
