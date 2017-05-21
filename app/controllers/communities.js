@@ -1,13 +1,7 @@
-// Strings for localization
-$.lblHeader.text = L('communities_title');
-
 var communities = [];
 
 getCommunities();
 
-//function search(e){
-	// $.lvwCommunities.searchText = e.value;
-//}
 function getCommunities() {
 	$.activityIndicator.show();
 
@@ -18,7 +12,12 @@ function getCommunities() {
 	    
 	    onload: function(e) {
 	    	
-			var response = JSON.parse(this.responseText);
+	    	try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+
 			var communities = [];
 
 			for(var i in response.results){
@@ -74,6 +73,10 @@ function openCommunityDetail(e){
 	var communityId = community.communityId.text;
 	var defaultRoutingIdId = community.defaultRoutingIdId.text;
 	var primaryContactId = community.primaryContactId.text;
+	
+	Alloy.Globals.defaultRoutingIdId = defaultRoutingIdId;
+	Alloy.Globals.primaryContactId = primaryContactId;
+	
 	var args = {"communityId":communityId,"defaultRoutingIdId":defaultRoutingIdId,"primaryContactId":primaryContactId};
 	var communityDetail = Alloy.createController('communityDetail',args).getView();
 	communityDetail.open();	

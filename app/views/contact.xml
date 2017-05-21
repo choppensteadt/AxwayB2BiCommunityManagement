@@ -1,0 +1,36 @@
+<Alloy>
+	<Window id="contact" class="container" backgroundColor="white"  title="Axway B2Bi" >
+		<Menu id="menu" platform="android">
+			<MenuItem id="mtmLogout" title="L('mainmenu_logout')" onClick="mnuLogoutClicked" />
+		</Menu>
+		<View id="contactTopSectionViewMode">
+			<ImageView id="ivPrimaryContact" image="/images/default-icon.png" />
+			<Label id="lblContactName" />
+			<Label id="lblContactTitle" />
+		</View>
+		<View id="contactBottomSectionViewMode">
+			<Label id="lblContactPhoneLabel">phone</Label>
+			<Label id="lblContactPhone" />
+			<Label id="lblContactEmailLabel">email</Label>
+			<Label id="lblContactEmail" />
+			<ImageView id="ivEmail" image="/images/email.png" onClick="sendEmailToContact" />
+			<Label id="lblContactNotesLabel">notes</Label>
+			<Label id="lblContactNotes" />
+		</View>
+		<View id="contactEditMode">	
+			<Label id="lblRequired">*</Label>
+			<TextField id="tfContactName" hintText="L('contact_name_hint')"/>
+			<TextField id="tfContactTitle" hintText="L('contact_title_hint')"/>
+			<TextField id="tfContactPhone" hintText="L('contact_phone_hint')"/>
+			<Label id="lblNecessary">*</Label>
+			<TextField id="tfContactEmail" hintText="L('contact_email_hint')"/>
+			<TextArea id="taContactNotes" hintText = "L('contact_notes_hint')"/>
+		</View>
+		<Switch id="swcPrimaryContactYN" visible="false" />
+		<Button id="btnEdit" onClick="updateContact" />
+		<Button id="btnSave" onClick="saveContact" />
+		<Button id="btnDelete" onClick="deleteContact" />
+		<Button id="btnCancel" onClick="cancelContact" />
+		<ActivityIndicator id="activityIndicator" />
+	</Window>
+</Alloy>

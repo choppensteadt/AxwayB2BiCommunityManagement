@@ -64,6 +64,8 @@
 	top: 165,
 	width: 200,
 	borderColor: "black",
+	backgroundColor: "white",
+	backgroundFocusedColor: "white",
 	hintText: "URL",
 	hintTextColor: "gray",
 	autocorrect: false,
@@ -73,7 +75,6 @@
 "#txtUserName[platform=android formFactor=tablet]": {
 	top: 230,
 	width: 200,
-	borderColor: "black",
 	hintTextColor: "gray",
 	autocorrect: false,
 	autocapitalization: false,
@@ -92,6 +93,7 @@
 	top: 355,	
 	style:Ti.UI.Android.SWITCH_STYLE_CHECKBOX,
 	color: "black",
+	tintColor: "gray",
 	font: {
         fontSize: '18',
     },

@@ -14,11 +14,41 @@
 	<string name="communities_title"> Communities</string>
 	
 	<!-- Community Detail Page -->
-	<string name="community_detail_contacts_tab_label"> Contacts</string>
-	<string name="community_detail_cert_tab_label"> Certificates</string>
-	<string name="community_detail_routingIds_tab_label"> Routing IDs</string>
-	<string name="community_detail_app_deliveries_tab_label"> Application Deliveries</string>
-	<string name="community_detail_app_pickups_tab_label"> Application Pickups</string>
-	<string name="community_detail_trading_pickups_tab_label"> Trading Pickups</string>
-	<string name="community_detail_trading_partners_tab_label"> Trading Partners</string>
+	<string name="community_detail_contacts_search_hint_text">Search Contacts</string>
+	<string name="community_detail_certicates_search_hint_text">Search Certificates</string>
+	<string name="community_detail_routingIds_search_hint_text">Search Routing IDs</string>
+	<string name="community_detail_app_deliveries_search_hint_text">Search Application Deliveries</string>
+	<string name="community_detail_app_pickups_search_hint_text">Search Application Pickups</string>
+	<string name="community_detail_trading_pickups_search_hint_text">Search Trading Pickups</string>
+	<string name="community_detail_trading_partners_search_hint_text">Search Trading Partners</string>
+	<string name="add_contact">+ Add Contact</string>
+
+	<!-- Send certificate notification confirmation dialog -->
+	<string name="notification_dialog_title">Certificate Expiry Notification</string>
+	<string name="notification_dialog_message">Would you like to a notification of impending certificate expiry to the primary contact of this community?</string>
+	<string name="notification_dialog_send">Send</string>
+	<string name="notification_dialog_cancel">Cancel</string>
+
+	<!-- Send certificate notification email message -->
+	<string name="notification_email_dialog_subject">Notice of Impending Certificate Expiry</string>
+	<string name="notification_email_dialog_body">One or more private certificates being used to sign and/or encrypt your B2B messages is set to expire within 31 days. \n \n To avoid B2B processing delays, please visit us at https://www.axway.com/en/enterprise-solutions/ecosystem-engagement to update your certificate. \n \n Best regards, \n \n Axway B2B Support Team</string>
+	
+	<!-- Contact Detail Page -->
+	<string name="contact_name_hint">name</string>
+	<string name="contact_title_hint">title</string>
+	<string name="contact_phone_hint">phone number</string>
+	<string name="contact_email_hint">email address</string>
+	<string name="contact_notes_hint">notes</string>
+	<string name="contact_make_primary_contact">Primary Contact</string>
+	<string name="contact_delete_button">DELETE</string>
+	<string name="contact_save_button">SAVE</string>
+	<string name="contact_edit_button">EDIT</string>
+	<string name="contact_cancel_button">CANCEL</string>
+	<string name="contact_close_button">CLOSE</string>
+	
+	<!-- Delete contact confirmation dialog -->
+	<string name="delete_contact_dialog_title">Delete Contact</string>
+	<string name="delete_contact_dialog_message">Are you sure that you want to delete this contact. This action cannot be undone.</string>
+	<string name="delete_contact_dialog_yes">DELETE</string>
+	<string name="delete_contact_dialog_cancel">CANCEL</string>
 </resources>

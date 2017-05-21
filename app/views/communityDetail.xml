@@ -4,9 +4,6 @@
 			<MenuItem id="mtmLogout" title="L('mainmenu_logout')" onClick="mnuLogoutClicked" />
 		</Menu>
 		<ScrollView id="svScrollView" scrollType="vertical" scrollingEnabled="true">
-			<Menu id="menu" platform="android">
-				<MenuItem id="mtmLogout" title="Logout" onClick="mnuLogoutClicked">Sign out</MenuItem>
-			</Menu>
 			<Label id="lblAppDescription" />
 			<Label id="lblCommunityInformation" />
 			<ImageView id="ivGetCommunityContacts" image="/images/navContact.gif" onClick="getCommunityContacts" />
@@ -19,9 +16,10 @@
 			<ImageView id="ivCloud" image="/images/navInternet.gif" />
 			<ImageView id="ivGetCommunityTradingPartners" image="/images/navTradingPartners.gif" onClick="getCommunityTradingPartners" />
 			<Label id="lblNumberOfTradingPartners" />
-	        <ListView id="lvwContacts" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
+	        <ListView id="lvwContacts" onItemclick="openContactDetail" caseInsensitiveSearch="true" headerView="searchView" footerView="footerView" backgroundColor="#E9EAEA" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
 	                <ItemTemplate id="contactDetailTemplate" height="80" name="contactDetailTemplate" >
+						<Label bindId="contactId" id="label_contactId" visible="false" />
 	                	<ImageView bindId="contactLeftImage" id="label_contactLeftImage"/>
 	                    <Label bindId="contactName" id="label_contactName" />
 	                    <Label bindId="contactEmail" id="label_contactEmail" />
@@ -29,10 +27,13 @@
 						<ImageView bindId="primaryRightImage" id="label_primaryRightImage"/>
 	                </ItemTemplate>
 	            </Templates>
-				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Contacts" />
+				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="L('community_detail_contacts_search_hint_text')" />
 	            <ListSection id="contactListSection" >
 	            	<ListItem id="contactListItem" />
 	            </ListSection>
+	            <FooterView id="footerView">
+	            	<Label id="addContact" onClick="addContact" text="L('add_contact')" />
+				</FooterView>
 	        </ListView>
 			<ListView id="lvwCertificates" caseInsensitiveSearch="true" headerView="searchView" backgroundColor="#E9EAEA" onItemclick="alertNotifyOfPendingYN" canScroll="true" showVerticalScrollIndicator="true" >
 	            <Templates>
@@ -45,7 +46,7 @@
 						<ImageView bindId="certificateRightImage" id="label_certificateRightImage" />
 	                </ItemTemplate>
 	            </Templates>
-	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Certificates" />
+	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="L('community_detail_certicates_search_hint_text')" />
 	            <ListSection id="certListSection" >
 	            	<ListItem id="certListItem" />
 	            </ListSection>
@@ -59,7 +60,7 @@
 	                	<ImageView bindId="routingIdRightImage" id="label_routingIdRightImage"/>
 	                </ItemTemplate>
 	            </Templates>
-				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Routing IDs" />
+				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="L('community_detail_routingIds_search_hint_text')" />
 	            <ListSection id="routingIdListSection" >
 	            	<ListItem id="routingIdListItem" />
 	            </ListSection>
@@ -75,7 +76,7 @@
 						<Label bindId="appDeliveryUrl" id="label_appDeliveryUrl" visible="false" />
 					</ItemTemplate>
 	            </Templates>
-	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Application Deliveries" />
+	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="L('community_detail_app_deliveries_search_hint_text')" />
 	            <ListSection id="appDeliveryListSection" >
 	            	<ListItem id="appDeliveryListItem" />
 	            </ListSection>
@@ -91,7 +92,7 @@
 						<Label bindId="appPickupUrl" id="label_appPickupUrl" visible="false" />
 	                </ItemTemplate>
 	            </Templates>
-				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Application Pickups" />
+				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="L('community_detail_app_pickups_search_hint_text')" />
 	            <ListSection id="appPickupListSection" >
 	            	<ListItem id="appPickupListItem" />
 	            </ListSection>
@@ -106,7 +107,7 @@
 						<Label bindId="tradingPickupUrl" id="label_tradingPickupUrl" />
 	                </ItemTemplate>
 	            </Templates>
-				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Trading Pickups" />
+				<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="L('community_detail_trading_pickups_search_hint_text')" />
 	            <ListSection id="tradingPickupListSection" >
 	            	<ListItem id="tradingPickupListItem" />
 	            </ListSection>
@@ -122,7 +123,7 @@
 						<Label bindId="tradingPartnerDefaultRoutingId" id="label_tradingPartnerDefaultRoutingId" />
 	                </ItemTemplate>
 	            </Templates>
-	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Search Trading Partners" />
+	            <SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="L('community_detail_trading_partners_search_hint_text')" />
 	            <ListSection id="tradingPartnerListSection" >
 	            	<ListItem id="tradingPartnerListItem" />
 	            </ListSection>

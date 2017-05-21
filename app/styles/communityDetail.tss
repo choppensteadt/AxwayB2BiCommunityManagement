@@ -98,18 +98,6 @@
         fontSize: 24,
     },
 }
-"#lblContactsHeaderViewLabel[platform=android formFactor=tablet]": {
-	top: 0,
-	left: 10,
-	width: "50%",    
-	height: Ti.UI.SIZE,
-	color: "white",
-	backgroundColor: "#989998",
-	font: {
-		fontSize: 24,
-  		fontFamily: 'OpenSans-Regular',
-	}
-}
 "#label_contactLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
 	width: 40,
@@ -147,20 +135,16 @@
 	width: 40,
 	height: 40
 }
-"#lvwCertificates[platform=android formFactor=tablet]":{
-	top: 280,
-}
-"#lblCertificatesHeaderViewLabel[platform=android formFactor=tablet]": {
-	top: 0,
-	left: 10,
-	width: "50%",
-    height: Ti.UI.SIZE,
-	color: "white",
-	backgroundColor: "#989998",
+"#addContact[platform=android formFactor=tablet]": {
+	color: "#3d4051",
+	left: 60,
 	font: {
-		fontSize: 24,
+        fontSize: 20,
   		fontFamily: 'OpenSans-Regular',
-	}
+  	},
+}
+"#lvwCertificates[platform=android formFactor=tablet]": {
+	top: 280,
 }
 "#label_certificateLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
@@ -211,18 +195,6 @@
 "#lvwRoutingIds[platform=android formFactor=tablet]":{
 	top: 280,
 }
-"#lblRoutingIdsHeaderViewLabel[platform=android formFactor=tablet]": {
-	top: 0,
-	left: 10,
-	width: "50%",
-    height: Ti.UI.SIZE,
-	color: "white",
-	backgroundColor: "#989998",
-	font: {
-		fontSize: 24,
-  		fontFamily: 'OpenSans-Regular',
-	}
-}
 "#label_routingIdLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
 	width: 40,
@@ -247,18 +219,6 @@
 	font: {
         fontSize: 24,
     },
-}
-"#lblAppDeliveryHeaderViewLabel[platform=android formFactor=tablet]": {
-	top: 0,
-	left: 10,
-	width: "50%",
-    height: Ti.UI.SIZE,
-	color: "white",
-	backgroundColor: "#989998",
-	font: {
-		fontSize: 24,
-  		fontFamily: 'OpenSans-Regular',
-	}
 }
 "#label_appDeliveryLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
@@ -307,18 +267,6 @@
         fontSize: 24,
     },
 }
-"#lblAppPickupsHeaderViewLabel[platform=android formFactor=tablet]": {
-	top: 0,
-	left: 10,
-	width: "50%",
-    height: Ti.UI.SIZE,
-	color: "white",
-	backgroundColor: "#989998",
-	font: {
-		fontSize: 24,
-  		fontFamily: 'OpenSans-Regular',
-	}
-}
 "#label_appPickupLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
 	width: 40,
@@ -366,18 +314,6 @@
         fontSize: 24,
     },
 }
-"#lblTradingPickupsHeaderViewLabel[platform=android formFactor=tablet]": {
-	top: 0,
-	left: 10,
-	width: "50%",
-    height: Ti.UI.SIZE,
-	color: "white",
-	backgroundColor: "#989998",
-	font: {
-		fontSize: 24,
-  		fontFamily: 'OpenSans-Regular',
-	}
-}
 "#label_tradingPickupLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
 	width: 40,
@@ -415,18 +351,6 @@
 	font: {
         fontSize: 24,
     },
-}
-"#lblTradingPartnersHeaderViewLabel[platform=android formFactor=tablet]": {
-	top: 0,
-	left: 10,
-	width: "50%",
-    height: Ti.UI.SIZE,
-	color: "white",
-	backgroundColor: "#989998",
-	font: {
-		fontSize: 24,
-  		fontFamily: 'OpenSans-Regular',
-	}
 }
 "#label_tradingPartnerLeftImage[platform=android formFactor=tablet]": {
 	left: 10,
@@ -473,6 +397,13 @@
 	color: "white",
 	backgroundColor: "#3d4051",
 	opacity: ".93",
+	font: {
+		fontSize: 22,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#footerView[platform=android formFactor=tablet]":{
+	color: "gray",
 	font: {
 		fontSize: 22,
   		fontFamily: 'OpenSans-Regular',

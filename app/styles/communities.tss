@@ -1,32 +1,11 @@
 "Window[platform=android]": {
-	backgroundColor: '#E9EAEA'
-}
-"#lblHeader[platform=android formFactor=tablet]": {
-	top: 10,
-	left: 10,,
-	width: "50%",
-	color: "white",
-	backgroundColor: "#989998",
-	font: {
-        fontSize: 28,
-  		fontFamily: 'OpenSans-Regular',
-  	},
-}
-"#lblHeader[platform=android formFactor=handheld]": {
-	top: 10,
-	left: 10,
-	width: "50%",
-	color: 'black',
-	font: {
-        fontSize: 22,
-  		fontFamily: 'OpenSans-Regular',
-  	},
+	backgroundColor: 'white'
 }
 "#lvwCommunities[platform=android formFactor=tablet]":{
-	top: 50,
+	top: 0,
 }
 "#lvwCommunities[platform=android formFactor=handheld]":{
-	top: 50,
+	top: 0,
 }
 "#searchView[platform=android formFactor=tablet]":{
 	color: "white",

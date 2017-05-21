@@ -1,0 +1,245 @@
+"#ivPrimaryContact[platform=android formFactor=tablet]": {
+	top: 50,
+	left: 50,
+	width: 100,
+	height: 100,
+}
+"#contactTopSectionViewMode[platform=android formFactor=tablet]": {
+	top: 0,
+	height: 200,
+	backgroundColor: "#F1F1D4",
+}
+"#lblContactName[platform=android formFactor=tablet]": {
+	top: 50,
+	center: "50%",
+	font: {
+		fontWeight: 'bold',
+		fontSize: 42,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#lblContactTitle[platform=android formFactor=tablet]": {
+	top: 110,
+	center: "50%",
+	font: {
+		fontSize: 28,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#lblContactPhoneLabel[platform=android formFactor=tablet]": {
+	top: 250,
+	left: 20,
+	color: "gray",
+	font: {
+		fontSize: 20,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#lblContactPhone[platform=android formFactor=tablet]": {
+	top: 275,
+	left: 60,
+	color: "blue",
+	font: {
+		fontSize: 24,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#lblContactEmailLabel[platform=android formFactor=tablet]": {
+	top: 350,
+	left: 20,
+	color: "gray",
+	font: {
+		fontSize: 20,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#ivEmail[platform=android formFactor=tablet]": {
+	top: 365,
+	right: 60,
+	width: 50,
+	height: 50,
+}
+"#lblContactEmail[platform=android formFactor=tablet]": {
+	top: 375,
+	left: 60,
+	color: "blue",
+	font: {
+		fontSize: 24,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#lblContactNotesLabel[platform=android formFactor=tablet]": {
+	top: 450,
+	left: 20,
+	color: "gray",
+	font: {
+		fontSize: 20,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#lblContactNotes[platform=android formFactor=tablet]": {
+	top: 475,
+	left: 60,
+	width: 600,
+	height: 200,
+	verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+	font: {
+		fontSize: 20,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#lblRequired[platform=android formFactor=tablet]": {
+	top: 60,
+	left: 30,
+	color: "red",
+	font: {
+		fontWeight: 'bold',
+		fontSize: 28,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#tfContactName[platform=android formFactor=tablet]": {
+	top: 50,
+	left: 60,
+	width: 400,
+	hintTextColor: "gray",
+	autocorrect: false,
+	autocapitalization: true,
+	borderRadius: "5",
+	borderColor: "black",
+	font: {
+		fontWeight: 'bold',
+		fontSize: 22,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#tfContactTitle[platform=android formFactor=tablet]": {
+	top: 115,
+	left: 60,
+	width: 400,
+	autocorrect: true,
+	autocapitalization: true,
+	hintTextColor: "gray",
+	borderRadius: "5",
+	borderColor: "black",
+	font: {
+		fontSize: 20,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#tfContactPhone[platform=android formFactor=tablet]": {
+	top: 180,
+	left: 60,
+	width: 400,
+	autocorrect: false,
+	autocapitalization: false,
+	hintTextColor: "gray",
+	borderRadius: "5",
+	borderColor: "black",
+	font: {
+		fontSize: 20,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#lblNecessary[platform=android formFactor=tablet]": {
+	top: 255,
+	left: 30,
+	color: "orange",
+	font: {
+		fontWeight: 'bold',
+		fontSize: 28,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#tfContactEmail[platform=android formFactor=tablet]": {
+	top: 245,
+	left: 60,
+	width: 400,
+	autocorrect: false,
+	autocapitalization: false,
+	hintTextColor: "gray",
+	borderRadius: "5",
+	borderColor: "black",
+	font: {
+		fontSize: 20,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#taContactNotes[platform=android formFactor=tablet]": {
+	top: 310,
+	left: 60,
+	width: 600,
+	height: 200,
+	verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+	autocorrect: true,
+	autocapitalization: true,
+	hintTextColor: "gray",
+	color: "black",
+	borderRadius: "5",
+	borderColor: "black",
+	font: {
+		fontSize: 20,
+  		fontFamily: 'OpenSans-Regular',
+	}
+}
+"#swcPrimaryContactYN[platform=android formFactor=tablet]": {
+	top: 50,
+	right: 100,	
+	style:Ti.UI.Android.SWITCH_STYLE_CHECKBOX,
+	color: "black",
+	tintColor: "gray",
+	font: {
+        fontSize: '20',
+    },
+}
+"#btnDelete[platform=android formFactor=tablet]": {
+	top: 675,
+	left: 60,
+	width: 150,
+	color: "white",
+	backgroundColor: "#407CA0",
+	borderRadius: "20",
+	font: {
+        fontSize: '22',
+    },
+}
+"#btnEdit[platform=android formFactor=tablet]": {
+	top: 675,
+	right: 230,
+	width: 150,
+	color: "white",
+	backgroundColor: "#407CA0",
+	borderRadius: "20",
+	font: {
+        fontSize: '22',
+    },
+}
+"#btnSave[platform=android formFactor=tablet]": {
+	top: 675,
+	right: 230,
+	width: 150,
+	color: "white",
+	backgroundColor: "#407CA0",
+	borderRadius: "20",
+	font: {
+        fontSize: '22',
+    },
+}
+"#btnCancel[platform=android formFactor=tablet]": {
+	top: 675,
+	right: 60,
+	width: 150,
+	color: "white",
+	backgroundColor: "#407CA0",
+	borderRadius: "20",
+	font: {
+        fontSize: '22',
+    },
+}
+"#activityIndicator[platform=android]": {
+	top: '50%',
+	left: '50%',
+	style: Ti.UI.ActivityIndicatorStyle.BIG_DARK,
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE,
+}

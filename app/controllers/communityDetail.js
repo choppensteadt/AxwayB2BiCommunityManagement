@@ -31,7 +31,13 @@ function getCommunityPartners(){
 	var xhr = Ti.Network.createHTTPClient({
 
 	    onload: function(e) {
-			var response = JSON.parse(this.responseText);
+	    	
+	    	try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+			
 			var count = response.count;
 
 			// Set the Trading Partner Count on the main Community Detail Page
@@ -63,11 +69,19 @@ function getCommunityContacts(){
 	    
 	    onload: function(e) {
 	    	
-			var response = JSON.parse(this.responseText);
+			try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+			
 			var table = [];
 						
 			for(var i in response.results){
 				
+				// Using the @ symbol in a key value pair key requires a two step process
+				var id = "@id";
+				var contactId = response.results[i][id];				
 				var name = response.results[i].name;
 				var phone = response.results[i].phone;
 				var email = response.results[i].email;
@@ -86,6 +100,7 @@ function getCommunityContacts(){
 						backgroundColor: "transparent",
 						selectedBackgroundColor: "#CCC",
 					},
+					contactId:{text:contactId},
 					contactLeftImage:{image:"/images/contact.png"},
 					contactName:{text:name},
 					contactPhone:{text:phone},
@@ -122,7 +137,13 @@ function getCommunityCertificates(){
 	var xhr = Ti.Network.createHTTPClient({
 	    
 	    onload: function(e) {
-			var response = JSON.parse(this.responseText);
+
+			try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+			
 			var table = [];
 						
 			for(var i in response.results){
@@ -187,7 +208,12 @@ function getCommunityRoutingIds(){
 	    
 	    onload: function(e) {
 	    	
-			var response = JSON.parse(this.responseText);
+			try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+			
 			var table = [];
 						
 			for(var i in response.results){
@@ -243,7 +269,13 @@ function getApplicationDeliveries(){
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/application/exchange/delivery?limit=100&offset=0&orderBy=name";
 	var xhr = Ti.Network.createHTTPClient({
 		onload: function(e) {
-			var response = JSON.parse(this.responseText);
+	    	
+	    	try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+			
 			var appDeliveries = [];
 						
 			for(var i in response.results){
@@ -305,7 +337,13 @@ function getApplicationPickups(){
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/application/exchange/pickup?limit=100&offset=0&orderBy=name";
 	var xhr = Ti.Network.createHTTPClient({
 		onload: function(e) {
-			var response = JSON.parse(this.responseText);
+			
+	    	try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+			
 			var appPickups = [];
 						
 			for(var i in response.results){
@@ -367,7 +405,13 @@ function getCommunityTradingPickups(){
 	var url = "http://"+Alloy.Globals.hostIP+":6080/rest/v1/communities/exchange/"+Alloy.Globals.communityId+"/trading/pickup";
 	var xhr = Ti.Network.createHTTPClient({
 		onload: function(e) {
-			var response = JSON.parse(this.responseText);
+	    	
+	    	try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+			
 			var pickups = [];
 						
 			for(var i in response.results){
@@ -423,7 +467,13 @@ function getCommunityTradingPartners(){
 	var xhr = Ti.Network.createHTTPClient({
 
 	    onload: function(e) {
-			var response = JSON.parse(this.responseText);
+	    	
+	    	try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+			
 			var tradingPartners = [];
 			
 			for (var i=0; i < response.results.length; i++){
@@ -493,7 +543,12 @@ function getCommunity(communityId) {
 
 		onload: function(e) {
 
-			var response = JSON.parse(this.responseText);
+	    	try { 
+				var response = JSON.parse(this.responseText); 
+			} catch (e) { 
+  				console.warn('Response parsing failed.', this.responseText, e);
+			}
+			
 			var communityName = response.partyName;
 			var communitySubscribedPartners = response.subscribedPartners;
 			var primaryContact = response.primaryContact.name;
@@ -518,17 +573,29 @@ function getCommunity(communityId) {
 	xhr.open("GET", url);
 	xhr.send();
 }
+function openContactDetail(e){
+	var contact = $.contactListSection.getItemAt(e.itemIndex);
+	var contactId = contact.contactId.text;
+	var args = {"mode":"view","contactId":contactId,"communityId":Alloy.Globals.communityId};
+	var contact = Alloy.createController('contact',args).getView();
+	contact.open();	
+}
+function addContact(){
+	var args = {"mode":"new","contactId":"","communityId":Alloy.Globals.communityId};
+	var contact = Alloy.createController('contact',args).getView();
+	contact.open();	
+}
 function alertNotifyOfPendingYN(e){
 	var certificate = $.certListSection.getItemAt(e.itemIndex);
 	var certificateAlert = certificate.certificateRightImage.image;
 		
 	if (certificateAlert == "/images/alert.png"){
 		var dialog = Ti.UI.createAlertDialog({
-		    send: 1,
+			title: L('notification_dialog_title'),
+			message: L('notification_dialog_message'),
+			buttonNames: [L('notification_dialog_send'), L('notification_dialog_cancel')],
+			send: 1,
 		    cancel: 2,
-			buttonNames: ['Send', 'Cancel'],
-			message: 'Would you like to a notification of impending certificate expiry to the primary contact of this community?',
-			title: 'Certificate Expiry Notification'
 		});
 		dialog.addEventListener('click', function(e){
 			if (e.index === 1){
@@ -537,29 +604,13 @@ function alertNotifyOfPendingYN(e){
 			else if (e.index === 0){
 				// The send button was clicked
 				var emailDialog = Ti.UI.createEmailDialog();
-				emailDialog.subject = "Notice of Impending Certificate Expiry";
 				emailDialog.toRecipients = [Alloy.Globals.primaryContactEmail];
-				emailDialog.messageBody = 'One or more private certificates being used to sign and/or encrypt your B2B messages is set to expire within 31 days. \n \n To avoid B2B processing delays, please visit us at https://www.axway.com/en/enterprise-solutions/ecosystem-engagement to update your certificate. \n \n Best regards, \n \n Axway B2B Support Team';
+				emailDialog.subject = L('notification_email_dialog_subject');
+				emailDialog.messageBody = L('notification_email_dialog_body');
 				emailDialog.open();
 			}
 		});
 		dialog.show();	
-	}
-}
-function notifyPrimaryContactOfPendingCertificateExpiry() {
-	var intent = Ti.Android.createIntent({
-		action: Ti.Android.ACTION_SEND,
-		type: 'text/plain'
-	});
-	intent.putExtra(Ti.Android.EXTRA_EMAIL,['info@axway.com']);
-	intent.putExtra(Ti.Android.EXTRA_BCC,['info@axway.com']);
-	intent.putExtra(Ti.Android.EXTRA_SUBJECT,'Notice of Impending Certificate Expiry');
-	intent.putExtra(Ti.Android.EXTRA_TEXT,'The public key certificate being used to decrypt your B2B messages and validate your digital signature is set to expire within '+Alloy.Globals.daysToExpire+' days. \n \n To avoid B2B processing delays, please visit us at https://www.axway.com/en/enterprise-solutions/ecosystem-engagement to update your certificate. \n \n Best regards, \n \n Axway B2B Support Team');
-
-	try {
-		Ti.Android.currentActivity.startActivity(intent);
-	} catch (ex){
-		Ti.UI.createNotification({message: 'No email applications installed'}).show();
 	}
 }
 function hideAllTabs(){
